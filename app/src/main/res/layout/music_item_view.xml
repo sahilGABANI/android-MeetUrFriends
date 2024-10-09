@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_4sdp"
+        android:paddingVertical="@dimen/_6sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="@dimen/_6sdp"
+            app:riv_border_width="2dp"
+            app:riv_border_color="@color/color_tab_purple"
+            tools:src="@drawable/dummy_profile_pic" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/musicTitleAppCompatTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_toStartOf="@+id/playMusicFrameLayout"
+            android:layout_toEndOf="@+id/ivProfile"
+            android:fontFamily="@font/lexend_medium"
+            android:textColor="@color/white"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            tools:text="Rossi Alessandro" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/singerNameAppCompatTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/musicTitleAppCompatTextView"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_toStartOf="@+id/playMusicFrameLayout"
+            android:layout_toEndOf="@+id/ivProfile"
+            android:fontFamily="@font/lexend_medium"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/white_50_opacity"
+            android:textSize="@dimen/_11sdp"
+            tools:text="Rossi Alessandro" />
+
+        <FrameLayout
+            android:id="@+id/playMusicFrameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/playAppCompatImageView"
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/music_play_button" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressProgressBar"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:progress="100"
+                app:indicatorColor="@color/color_tab_purple"
+                app:indicatorSize="@dimen/_26sdp"
+                android:max="100"
+                app:trackColor="@color/white"/>
+
+            <ProgressBar
+                android:id="@+id/loadMusic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                style="?android:attr/progressBarStyleSmall"/>
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

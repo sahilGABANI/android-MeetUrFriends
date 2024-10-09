@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_bottom_sheet"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="@dimen/size_zero"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/viewUpper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical|center"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:src="@drawable/ic_bsv_header_line" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:paddingVertical="@dimen/_3sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/lexend_semi_bold"
+        android:text="@string/label_report"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_16ssp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_medium"
+        android:text="@string/label_why_are_you_reporting_this_user"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/desc_report"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSpam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/label_it_s_spam"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/color_grey_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNudity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/label_nudity_or_sexual_activity"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/color_grey_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDoNotLike"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/label_just_don_t_like_it"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/color_grey_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHateSpeech"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/label_hate_speech_or_symbols"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/color_grey_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvViolence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/label_violence_or_dangerous_organisations"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/color_grey_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBullying"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/label_bullying_or_harassment"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/color_grey_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFalseInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/label_false_information"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/color_grey_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvScam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/label_scam_or_fraud"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/color_grey_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSuicide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/label_suicide_or_self_injury"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/color_grey_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSaleIllegal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/label_sale_of_illegal_or_regulated_goods"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/color_grey_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvIntellectualProperty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/label_intellectual_property_violation"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/color_grey_view" />
+
+
+</LinearLayout>

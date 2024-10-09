@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_bottom_sheet"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="@dimen/size_zero"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:layout_marginBottom="@dimen/_5sdp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/viewUpper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|center_vertical|center"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:src="@drawable/ic_bsv_header_line" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCameraOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_regular"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/_12sdp"
+        android:text="@string/label_capture_using_camera"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/color_grey_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvGalleryOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_regular"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/_12sdp"
+        android:text="@string/label_select_from_gallery"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/color_grey_view"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvVideoCameraOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_regular"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/_12sdp"
+        android:text="@string/label_capture_video_using_camera"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/color_grey_view"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvVideoGalleryOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_regular"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/_12sdp"
+        android:text="@string/label_select_video_from_gallery"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp"
+        android:visibility="gone"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/color_grey_view" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_regular"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/_12sdp"
+        android:text="@string/places_cancel"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+</LinearLayout>

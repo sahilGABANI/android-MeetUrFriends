@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "936609372540",
+    "firebase_url": "https://meet-friend-app.firebaseio.com",
+    "project_id": "meet-friend-app",
+    "storage_bucket": "meet-friend-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936609372540:android:d209af2c50361a25562cf9",
+        "android_client_info": {
+          "package_name": "com.example.firebaseotpapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936609372540-ih05kg8lk7inmd1f7bd4i3e2ouklmr4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXh7HBXsLGzZDeomvWliryh7sgmHEMtm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936609372540-ajmmuvp3eceoc6eaa40bu37v4q9vpjhc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "936609372540-l7q2vki8ftbgs9g1lv4eqbsb4nt8ucoe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.meet-friends",
+                "app_store_id": "1542521051"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936609372540:android:23015a5ca9c5b86f562cf9",
+        "android_client_info": {
+          "package_name": "com.meetfriend.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936609372540-3hthl08s6qd5vpnlpbknsfmen4n14t6l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.meetfriend.app",
+            "certificate_hash": "5f77f1da27f68e879eb3d10f0e5421811c4a6c8c"
+          }
+        },
+        {
+          "client_id": "936609372540-4pfc7r5tk9c3kvdo6ridgli4d2faokvu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.meetfriend.app",
+            "certificate_hash": "c38934287fdb166f982efcf5d2fdc9908b92e2e5"
+          }
+        },
+        {
+          "client_id": "936609372540-bqsjr76rjdorec64a5flafbvr59b22g0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.meetfriend.app",
+            "certificate_hash": "ceda4bed6459d65609a6523241f6d44ebac36ae6"
+          }
+        },
+        {
+          "client_id": "936609372540-ibfotmv5kj3a9j1hes7ects5q7rfdojm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.meetfriend.app",
+            "certificate_hash": "5349d84277b134a6c1a017a3e552253faa313339"
+          }
+        },
+        {
+          "client_id": "936609372540-ih05kg8lk7inmd1f7bd4i3e2ouklmr4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXh7HBXsLGzZDeomvWliryh7sgmHEMtm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936609372540-ajmmuvp3eceoc6eaa40bu37v4q9vpjhc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "936609372540-l7q2vki8ftbgs9g1lv4eqbsb4nt8ucoe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.meet-friends",
+                "app_store_id": "1542521051"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8787848622927672~1009868102"
+    }
+  ],
+  "configuration_version": "1"
+}

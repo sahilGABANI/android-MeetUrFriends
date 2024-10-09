@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.chatRoom.roomview.ViewChatRoomActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_3sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:src="@drawable/ic_back_new" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/llHeaderAction"
+                android:layout_toEndOf="@id/ivBack"
+                android:orientation="vertical"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_6sdp"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvChatRoomName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lexend_semi_bold"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_16ssp"
+                    tools:text="@string/label_love_birds_05"
+                    android:layout_gravity="center_vertical"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAdmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.5"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/admin"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_8sdp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:includeFontPadding="false"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llHeaderAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDropDown"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:src="@drawable/ic_drop_down"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/llAdminCallContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:background="@drawable/bg_call_container"
+                    android:padding="@dimen/_4sdp"
+                    android:visibility="gone">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginEnd="@dimen/_5sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivMicOff"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:background="@drawable/white_round"
+                            android:padding="@dimen/_6sdp"
+                            android:src="@drawable/ic_mic_off"
+                            android:visibility="gone" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivMic"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:background="@drawable/white_round"
+                            android:padding="@dimen/_8sdp"
+                            android:src="@drawable/ic_mic_access_black"
+                            android:visibility="visible" />
+
+                    </FrameLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivCutCall"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:background="@drawable/red_round"
+                        android:padding="@dimen/_8sdp"
+                        android:src="@drawable/ic_call_user"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCall"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_call_user"
+                    android:visibility="visible"
+                    app:tint="@color/textColor_Green"
+                    android:layout_gravity="center_vertical"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivMore"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_more"
+                    android:tint="@color/grey"
+                    android:visibility="visible"
+                    app:tint="@color/color_text_black"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_gravity="center_vertical" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivNext"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_next_arrow"
+                    android:tint="@color/grey"
+                    android:visibility="gone"
+                    app:tint="@color/color_text_black" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivVideoCall"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_call_video"
+                    android:tint="@color/textColor_Green"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/llAdminProfileImageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_below="@id/cvHeader"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProfileImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/view_chat_room_view_profile_images" />
+
+        <com.meetfriend.app.newbase.view.SquareImageView
+            android:id="@+id/ivFirstAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_add_profile_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="@dimen/_5sdp" />
+
+        <com.meetfriend.app.newbase.view.SquareImageView
+            android:id="@+id/ivSecondAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_add_profile_placeholder"
+            app:layout_constraintEnd_toStartOf="@id/ivThirdAdmin"
+            app:layout_constraintStart_toEndOf="@id/ivFirstAdmin"
+            app:riv_corner_radius="@dimen/_5sdp" />
+
+        <com.meetfriend.app.newbase.view.SquareImageView
+            android:id="@+id/ivThirdAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_add_profile_placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:riv_corner_radius="@dimen/_5sdp" />
+
+        <com.meetfriend.app.newbase.view.SquareImageView
+            android:id="@+id/ivFourthAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_add_profile_placeholder"
+            app:layout_constraintEnd_toStartOf="@id/ivFifthAdmin"
+            app:layout_constraintStart_toEndOf="@id/ivThirdAdmin"
+            app:riv_corner_radius="@dimen/_5sdp" />
+
+        <com.meetfriend.app.newbase.view.SquareImageView
+            android:id="@+id/ivFifthAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_add_profile_placeholder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:riv_corner_radius="@dimen/_5sdp" />
+
+        <com.meetfriend.app.newbase.view.SquareImageView
+            android:id="@+id/ivPremium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_premium_person"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@id/llAdminProfileImageContainer"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@color/color_grey_view"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/flContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rlSendMessageContainer"
+        android:layout_below="@id/view">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/view_chat_room_message" />
+
+        <ProgressBar
+            android:id="@+id/progressBarVoiceCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/rlVoiceCallContainer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_62sdp"
+            android:background="@color/textColor_Green"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/ivProfileImage"
+                android:layout_width="@dimen/_52sdp"
+                android:layout_height="@dimen/_52sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:scaleType="centerCrop"
+                app:riv_corner_radius="@dimen/_8sdp"
+                tools:src="@drawable/ic_empty_profile_placeholder" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@id/ivProfileImage"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_semi_bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    tools:text="@string/label_kandy_peach" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/label_on_going_call"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/timerTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/_00_00"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llMentionUserListContainer"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_190sdp"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/_44sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@drawable/bg_edittext"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMentionUserList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/view_mention_user" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/rlSendMessageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/ic_add_image"
+            android:visibility="visible"/>
+
+        <RelativeLayout
+            android:id="@+id/sendMessageRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_edittext"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/ivGift"
+                android:background="@null"
+                android:fontFamily="@font/lexend_regular"
+                android:hint="@string/hint_type_a_message"
+                android:imeOptions="actionSend"
+                android:maxHeight="@dimen/_100sdp"
+                android:padding="@dimen/_7sdp"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivGift"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/ivSend"
+                android:src="@drawable/ic_gift_chat"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSend"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_send_message" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRestrictMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:fontFamily="@font/lexend_regular"
+            android:gravity="center"
+            android:text="@string/you_are_restricted_to_writing_in_this_conversation"
+            android:alpha="0.5"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_12ssp"
+            android:layout_weight="1"
+            android:visibility="gone"/>
+
+        <FrameLayout
+            android:id="@+id/flSpeaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSpeaker"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/speaker_icon"
+                android:visibility="visible"
+                app:tint="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSpeakerOff"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_speaker_mute_new"
+                android:visibility="gone"
+                app:tint="@color/black" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/micAccessFrameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/micAppCompatImageView"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/chatroom_mic"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/micOffAppCompatImageView"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_chatroom_mute_mic"
+                android:visibility="visible" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlRestrict"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/flContainer"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:fontFamily="@font/lexend_regular"
+            android:gravity="center"
+            android:text="@string/you_are_restricted_to_writing_in_this_conversation"
+            android:alpha="0.5"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_12ssp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

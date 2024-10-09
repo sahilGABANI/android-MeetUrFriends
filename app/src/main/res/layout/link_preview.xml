@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_55sdp"
+    android:id="@+id/linkAttachmentCardView"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="@dimen/_10sdp"
+    android:backgroundTint="@color/colorHalfTransparent"
+    android:layout_marginHorizontal="@dimen/_20sdp"
+    app:cardElevation="0dp"    >
+
+    <LinearLayout
+        android:id="@+id/llAttachment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_7sdp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                app:srcCompat="@drawable/img_google_logo" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_17sdp"
+                tools:text="Title"
+                android:textColor="@color/white"
+                android:includeFontPadding="false"
+                android:textSize="16sp"
+                android:fontFamily="@font/lexend_semi_bold"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/url"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_17sdp"
+                tools:text="Url"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:fontFamily="@font/lexend_regular"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,266 @@
+package com.meetfriend.app.ui.messages
+
+import android.app.Activity
+import android.content.Context
+import android.content.DialogInterface
+import android.content.Intent
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
+import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.jakewharton.rxbinding3.swiperefreshlayout.refreshes
+import com.jakewharton.rxbinding3.widget.textChanges
+import com.meetfriend.app.api.authentication.LoggedInUserCache
+import com.meetfriend.app.api.chat.model.ChatRoomInfo
+import com.meetfriend.app.api.chat.model.ChatRoomListItemActionState
+import com.meetfriend.app.application.MeetFriendApplication
+import com.meetfriend.app.databinding.ActivityMessageListBinding
+import com.meetfriend.app.newbase.BasicFragment
+import com.meetfriend.app.newbase.ViewModelFactory
+import com.meetfriend.app.newbase.extension.getViewModelFromFactory
+import com.meetfriend.app.newbase.extension.showToast
+import com.meetfriend.app.newbase.extension.subscribeAndObserveOnMainThread
+import com.meetfriend.app.newbase.extension.throttleClicks
+import com.meetfriend.app.ui.chat.onetoonechatroom.ViewOneToOneChatRoomActivity
+import com.meetfriend.app.ui.chat.onetoonechatroom.view.OneToOneChatRoomAdapter
+import com.meetfriend.app.ui.messages.viewmodel.MessageChatRoomViewModel
+import com.meetfriend.app.ui.messages.viewmodel.MessagesChatRoomViewState
+import com.meetfriend.app.utils.FileUtils
+import io.reactivex.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
+import javax.inject.Inject
+
+class MessageListActivity : BasicFragment() {
+
+    companion object {
+        @JvmStatic
+        fun getIntent(context: Context): Intent {
+            return Intent(context, MessageListActivity::class.java)
+        }
+
+        @JvmStatic
+        fun newInstance() = MessageListActivity()
+    }
+
+    private var _binding: ActivityMessageListBinding? = null
+    private val binding get() = _binding!!
+
+    @Inject
+    internal lateinit var viewModelFactory: ViewModelFactory<MessageChatRoomViewModel>
+    private lateinit var messageChatRoomViewModel: MessageChatRoomViewModel
+
+    private lateinit var oneToOneChatRoomAdapter: OneToOneChatRoomAdapter
+
+    @Inject
+    lateinit var loggedInUserCache: LoggedInUserCache
+
+    private var position = 0
+    private var searchString: String? = null
+    private var count = 0
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = ActivityMessageListBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        MeetFriendApplication.component.inject(this)
+        messageChatRoomViewModel = getViewModelFromFactory(viewModelFactory)
+
+        listenToViewModel()
+        listenToViewEvent()
+    }
+
+
+    private fun listenToViewEvent() {
+
+        binding.backAppCompatImageView.throttleClicks().subscribeAndObserveOnMainThread {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+
+        oneToOneChatRoomAdapter = OneToOneChatRoomAdapter(requireContext()).apply {
+            chatRoomItemClick.subscribeAndObserveOnMainThread {
+                when (it) {
+                    is ChatRoomListItemActionState.ContainerClick -> {
+                        val canSendMessage = it.chatRoomInfo.isChat == 1
+                        startActivity(
+                            ViewOneToOneChatRoomActivity.getIntentWithData(
+                                requireContext(), it.chatRoomInfo, true, canSendMessage
+                            )
+                        )
+                    }
+
+                    is ChatRoomListItemActionState.DeleteClick -> {
+                        position = listOfDataItems?.indexOf(it.chatRoomInfo) ?: 0
+                        deleteAlertDialog(it.chatRoomInfo)
+
+                    }
+                    else -> {}
+                }
+            }
+        }
+
+        binding.rvChatRoomList.apply {
+            adapter = oneToOneChatRoomAdapter
+            addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    super.onScrolled(recyclerView, dx, dy)
+                    if (dy > 0) {
+                        (layoutManager as LinearLayoutManager).apply {
+                            val visibleItemCount = childCount
+                            val totalItemCount = itemCount
+                            val pastVisibleItems = findFirstVisibleItemPosition()
+                            if ((visibleItemCount + pastVisibleItems) >= totalItemCount) {
+                                if (searchString != null) {
+                                    messageChatRoomViewModel.loadMoreOneToOneChatRoom(searchString)
+                                } else {
+                                    messageChatRoomViewModel.loadMoreOneToOneChatRoom(null)
+                                }
+                            }
+                        }
+                    }
+                }
+            })
+        }
+
+        binding.swipeRefreshLayout.refreshes().subscribeAndObserveOnMainThread {
+            binding.swipeRefreshLayout.isRefreshing = false
+            messageChatRoomViewModel.resetPaginationForOneToOneChatRoom(null)
+        }.autoDispose()
+
+        binding.searchUserAppCompatEditText.textChanges()
+            .debounce(400, TimeUnit.MILLISECONDS, Schedulers.io())
+            .subscribeAndObserveOnMainThread {
+                if (it.isNotEmpty()) {
+                    searchString = it.toString()
+                    binding.rvChatRoomList.scrollToPosition(0)
+                    messageChatRoomViewModel.resetPaginationForOneToOneChatRoom(it.toString())
+                } else {
+                    if(isResumed) {
+                        searchString = null
+                        messageChatRoomViewModel.resetPaginationForOneToOneChatRoom(null)
+                    }
+                }
+            }.autoDispose()
+        binding.swipeRefreshLayout.refreshes().subscribeAndObserveOnMainThread {
+            binding.swipeRefreshLayout.isRefreshing = false
+            binding.searchUserAppCompatEditText.textChanges()
+                .debounce(400, TimeUnit.MILLISECONDS, Schedulers.io())
+                .subscribeAndObserveOnMainThread {
+                    if (it.isNotEmpty()) {
+                        messageChatRoomViewModel.resetPaginationForOneToOneChatRoom(it.toString())
+                    } else {
+                        messageChatRoomViewModel.resetPaginationForOneToOneChatRoom(null)
+                    }
+                }.autoDispose()
+        }.autoDispose()
+
+    }
+
+    private fun listenToViewModel() {
+        messageChatRoomViewModel.messageChatRoomState.subscribeAndObserveOnMainThread {
+            when (it) {
+                is MessagesChatRoomViewState.ErrorMessage -> {
+                    showToast(it.errorMessage)
+                }
+
+                is MessagesChatRoomViewState.LoadingState -> {
+                    buttonVisibility(it.isLoading)
+                }
+                is MessagesChatRoomViewState.SuccessMessage -> {
+                }
+                is MessagesChatRoomViewState.ListOfOneToOneChatRoom -> {
+                    hideLoading()
+                    if (it.listOfChatRoom.isEmpty()) {
+
+                        if (!it.isSearch) {
+                            binding.searchUserAppCompatEditText.isVisible = false
+                            binding.llEmptyState.visibility = View.VISIBLE
+
+                        } else {
+                            binding.llEmptyState.visibility = View.GONE
+                        }
+                        binding.rvChatRoomList.visibility = View.GONE
+
+
+                    } else {
+                        binding.rvChatRoomList.visibility = View.VISIBLE
+                        binding.llEmptyState.visibility = View.GONE
+                        oneToOneChatRoomAdapter.listOfDataItems = it.listOfChatRoom
+                        binding.searchUserAppCompatEditText.isVisible = true
+                    }
+                }
+                is MessagesChatRoomViewState.DeleteChatRoom -> {
+                    val list = oneToOneChatRoomAdapter.listOfDataItems as ArrayList
+                    list.removeAt(position)
+                    if (isLastItemVisible()) messageChatRoomViewModel.loadMoreOneToOneChatRoom(null)
+                    oneToOneChatRoomAdapter.listOfDataItems = list
+                }
+                else -> {}
+            }
+
+
+        }.autoDispose()
+    }
+
+    private fun isLastItemVisible(): Boolean {
+        val layoutManager = binding.rvChatRoomList.layoutManager as LinearLayoutManager
+        val position = layoutManager.findLastVisibleItemPosition()
+        return position >= oneToOneChatRoomAdapter.itemCount - 1
+    }
+
+    private fun buttonVisibility(loading: Boolean) {
+        if ((oneToOneChatRoomAdapter.listOfDataItems?.size ?: 0) == 0)
+            if(loading) showLoading() else hideLoading()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if ((requestCode == FileUtils.PICK_IMAGE) && (resultCode == Activity.RESULT_OK)) {
+            data?.data?.also {
+                for (fragment in childFragmentManager.fragments) {
+                    fragment.onActivityResult(requestCode, resultCode, data)
+                }
+            }
+        }
+    }
+
+    private fun deleteAlertDialog(pos: ChatRoomInfo) {
+        val alertDialog: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+        alertDialog.setTitle("Delete")
+        alertDialog.setMessage("Are you sure want to delete?")
+
+        alertDialog.setPositiveButton("Yes") { dialogInterface: DialogInterface, i: Int ->
+            messageChatRoomViewModel.deleteChatRoom(pos.id)
+        }
+
+        alertDialog.setNegativeButton("No") { dialog: DialogInterface?, which: Int ->
+
+        }
+        val alert: AlertDialog = alertDialog.create()
+        alert.show()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if(count == 0) {
+            messageChatRoomViewModel.resetPaginationForOneToOneChatRoom(null)
+            count += 1
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        count = 0
+    }
+}

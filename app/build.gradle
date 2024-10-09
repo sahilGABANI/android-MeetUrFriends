@@ -1,0 +1,335 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.google.gms.google-services'
+
+
+android {
+    signingConfigs {
+        release {
+            storePassword 'meeturfriends'
+            keyAlias 'meeturfriends'
+            keyPassword 'meeturfriends'
+            storeFile file('../meeturfriends.jks')
+        }
+    }
+
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.meetfriend.app"
+        minSdk 27
+        targetSdk 34
+        versionCode 154
+        /*versionName "2.14"*/
+        versionName "3.154"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
+        ndk {
+            abiFilters.add("armeabi-v7a")
+            abiFilters.add("arm64-v8a")
+            abiFilters.add("armeabi")
+            abiFilters.remove("x86_64")
+        }
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "PLACE_API_KEY", "\"AIzaSyAs0rmZ2UJbx5-lo94SG-m93INIE7tdTpQ\""
+            buildConfigField 'String', "LENS_GROUP_ID_TEST", "\"2ed3a231-ba5c-4d8e-8525-3539ddcb26a3\""
+
+        }
+
+        release {
+            multiDexEnabled true
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "PLACE_API_KEY", "\"AIzaSyAs0rmZ2UJbx5-lo94SG-m93INIE7tdTpQ\""
+            buildConfigField 'String', "LENS_GROUP_ID_TEST", "\"2ed3a231-ba5c-4d8e-8525-3539ddcb26a3\""
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+        buildConfig true
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    packagingOptions {
+        pickFirst "**/libswscale.so"
+        pickFirst "**/libavcodec.so"
+        pickFirst "**/libavutil.so"
+        pickFirst "**/libavformat.so"
+    }
+    assetPacks = [":install_time_asset_pack"]
+
+    namespace 'com.meetfriend.app'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation ("androidx.core:core-ktx:1.13.1")
+    implementation ("androidx.appcompat:appcompat:1.7.0")
+    implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation ("com.google.android.material:material:1.12.0")
+    implementation ("androidx.vectordrawable:vectordrawable:1.2.0")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.8.1")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.8.1")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.8.1")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.8.1")
+    implementation ("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation ("androidx.work:work-runtime-ktx:2.9.1")
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.9.0"))
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
+
+    // ============== Glide ==============
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+
+    // ============== LifeCycle ==============
+    implementation ("androidx.lifecycle:lifecycle-common:2.3.1")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.3.1")
+
+    // ============== LiveData LifeCycle ==============
+    implementation ("com.github.skydoves:viewmodel-lifecycle:1.1.0")
+
+    // ============== intuit for different devices size ==============
+    implementation ("com.intuit.sdp:sdp-android:1.1.0")
+    implementation ("com.intuit.ssp:ssp-android:1.1.0")
+
+    // ============== Coroutines ==============
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
+
+    // ============== Gson ==============
+    implementation ("com.google.code.gson:gson:2.10.1")
+
+    // ============== Retrofit ==============
+    implementation("com.squareup.retrofit2:retrofit:$rootProject.retrofit_version") {
+        // exclude Retrofit ’ s OkHttp peer -dependency module and define your own module import
+        exclude module: 'okhttp'
+    }
+    implementation ("com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit_rxJava_version")
+    implementation ("com.squareup.retrofit2:converter-gson:$rootProject.retrofit_version")
+    implementation ("com.squareup.retrofit2:converter-scalars:$rootProject.retrofit_version")
+
+
+    // ============== Image picker ==============
+    implementation ("com.github.esafirm.android-image-picker:imagepicker:2.3.2")
+
+    // ============== Custom Indicator ==============
+    implementation project(':indicator_library')
+
+    // ============== Acra Crashlytics ==============
+    implementation ("ch.acra:acra:4.9.0")
+
+    // ============== Picasso ==============
+    implementation ("com.squareup.picasso:picasso:2.71828")
+
+    // ============== Country Code Picker ==============
+    implementation ("com.hbb20:ccp:2.7.0")
+
+    // ============== Rounded View ==============
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    implementation project(':filepicker')
+
+    // ============== Google Sdk ==============
+    implementation("com.google.android.gms:play-services-ads:23.3.0")
+    implementation ("com.google.android.gms:play-services-auth:21.2.0")
+    implementation ("com.google.android.gms:play-services-location:21.3.0")
+
+    // ============== Dot Indicator ==============
+    implementation ("com.tbuonomo:dotsindicator:4.2")
+
+    // ============== Date & Time Picker Dialog ==============
+    implementation ("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
+
+    // ============== Date & Time Picker Dialog ==============
+    implementation ("com.github.florent37:singledateandtimepicker:2.2.7")
+
+    // ============== Google Places ==============
+    implementation ("com.google.android.libraries.places:places:3.5.0")
+
+    // ============== FFMpeg ==============
+    implementation ("com.arthenica:mobile-ffmpeg-full:4.4.LTS")
+
+    // ============== Exo Player ==============
+    implementation ("com.google.android.exoplayer:exoplayer:2.19.1")
+    implementation ("com.google.android.exoplayer:exoplayer-core:2.19.1")
+    implementation ("com.google.android.exoplayer:exoplayer-ui:2.19.1")
+    implementation ("com.google.android.exoplayer:exoplayer-hls:2.19.1")
+    implementation ("com.google.android.exoplayer:exoplayer-dash:2.19.1")
+
+    // ============== Photo View full Zoom in-out ==============
+    implementation ("com.github.chrisbanes:PhotoView:2.3.0")
+
+    // ============== Circle Indicator ==============
+    implementation ("me.relex:circleindicator:2.1.6")
+
+    // ============== Image Compressor ==============
+    implementation("id.zelory:compressor:3.0.1")
+
+    // ============== Multidex ==============
+    implementation("androidx.multidex:multidex:2.0.1")
+    implementation("com.android.support:multidex:1.0.3")
+
+    // ============== Swipe Reveal Layout ==============
+    implementation project(':swipe_reveal_layout')
+
+    // ============== Agora For Live Streaming And Video And Voice Calling ==============
+    implementation("io.agora.rtc:full-sdk:3.6.2")
+
+    // ============== Annotation ==============
+    implementation("androidx.annotation:annotation:1.8.2")
+
+    // ============== Facebook ads ==============
+    implementation("com.google.ads.mediation:facebook:6.17.0.0")
+
+    // ============== Rounded Horizontal ProgressBar ==============
+    implementation project(':roundedhorizontalprogress')
+
+    // ============== KeyBoard Event Listner ==============
+    implementation("net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:3.0.0-RC3")
+
+    // ============== Rounded Image View ==============
+    implementation("com.makeramen:roundedimageview:2.3.0")
+
+    // ==============RxJava==============
+    implementation("io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid_version")
+    implementation("io.reactivex.rxjava2:rxjava:$rootProject.rxJava_version")
+
+    // ==============Dagger==============
+    implementation("com.google.dagger:dagger:$rootProject.dagger_version")
+
+    implementation("androidx.test.ext:junit-ktx:1.2.1")
+    implementation project(path: ':videcrop')
+    kapt("com.google.dagger:dagger-compiler:$rootProject.dagger_version")
+    kapt("com.google.dagger:dagger-android-processor:$rootProject.dagger_version")
+
+    // ==============Logging==============
+    implementation ("com.jakewharton.timber:timber:5.0.1")
+
+    // ==============RxViewBinding==============
+    implementation("com.jakewharton.rxbinding3:rxbinding:$rootProject.rxbinding_version")
+    implementation("com.jakewharton.rxbinding3:rxbinding-swiperefreshlayout:$rootProject.rxbinding_version")
+    implementation("com.jakewharton.rxbinding3:rxbinding-material:$rootProject.rxbinding_version")
+    implementation("com.jakewharton.rxbinding3:rxbinding-drawerlayout:$rootProject.rxbinding_version")
+
+    // ============== OkHttp ==============
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.12.0"))
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
+    // ============== XXPermissions ==============
+    implementation("com.github.getActivity:XXPermissions:20.0")
+
+    // ============== FilePath ==============
+    implementation("com.github.onimur:handle-path-oz:1.0.7")
+
+    // ==============Socket io==============
+    implementation('io.socket:socket.io-client:2.0.1') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    // ============== Billing ==============
+    implementation("com.android.billingclient:billing:7.0.0")
+    implementation("com.android.billingclient:billing-ktx:7.0.0")
+
+    //  ============Floating Heart==============
+    implementation("com.github.petersamokhin:floating-hearts-view:0.0.3")
+
+    // =============For 3D Animations===========
+    implementation("org.rajawali3d:rajawali:1.1.970@aar")
+
+    // ============= jzvd Video Player ===========
+    implementation("cn.jzvd:jiaozivideoplayer:7.7.0")
+
+    // ============= Firebase ===========
+    implementation platform('com.google.firebase:firebase-bom:33.3.0')
+    implementation("com.google.firebase:firebase-dynamic-links-ktx")
+    implementation("com.google.firebase:firebase-dynamic-links")
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-messaging")
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-auth")
+
+    // ============= Image Slideshow  ===========
+    implementation("com.github.denzcoskun:ImageSlideshow:0.1.0")
+
+    // ============= Lottie Animation  ===========
+    implementation("com.otaliastudios:cameraview:2.7.2")
+
+    // ============= Lottie Animation  ===========
+    implementation("com.airbnb.android:lottie:6.5.0")
+
+    // ============= DeepAR  ===========
+    implementation("ai.deepar.ar:DeepAR:5.4.4")
+
+    // ============= Camera  ===========
+    implementation("androidx.camera:camera-core:1.3.4")
+    implementation("androidx.camera:camera-camera2:1.3.4")
+    implementation("androidx.camera:camera-lifecycle:1.3.4")
+    implementation("androidx.camera:camera-view:1.3.4")
+    implementation("com.mixpanel.android:mixpanel-android:7.3.2")
+
+    // ============= In App Update And In App Review  ===========
+    implementation ("com.google.android.play:app-update:2.1.0")
+    implementation ("com.google.android.play:review:2.0.1")
+    implementation ("com.github.jrvansuita:CheckNewAppVersionAvailable:v1.0.0")
+
+    // ============= TUS Client For Uploading CloudFlare ===========
+    implementation ("io.tus.android.client:tus-android-client:0.1.11")
+    implementation ("io.tus.java.client:tus-java-client:0.5.0")
+
+    // ============= Image width & height ===========
+    implementation("io.coil-kt:coil:2.7.0")
+
+    // ============= Circle Indicator ===========
+    implementation("me.relex:circleindicator:2.1.6")
+
+    // ============= Light Compressor For Video Compress ===========
+    implementation project(':lightcompressor')
+
+    // ============= OTP View ===========
+    implementation("com.github.mukeshsolanki:android-otpview-pinview:3.1.0")
+
+    // ============= Floating Action Button with Menu Drag ===========
+    implementation("com.github.aeonSolutions:FloatingActionButtonMenuDrag:1.1")
+
+    // ============= Snap Camera Kit ===========
+    implementation("com.snap.camerakit:support-camera-activity:1.33.0")
+
+    // ============= Color Picker ===========
+    implementation("com.github.rtugeek:colorseekbar:2.1.0")
+
+    // ============= Photo Crop ===========
+    implementation("com.github.yalantis:ucrop:2.2.9")
+
+    // ============= Link Attachment Fetch Title ===========
+    implementation("org.jsoup:jsoup:1.18.1")
+
+}

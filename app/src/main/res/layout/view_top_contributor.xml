@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/_6sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvIndexNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/lexend_regular"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_12ssp"
+            tools:text="1" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivUserProfileImage"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_toEndOf="@id/tvIndexNumber"
+            android:scaleType="centerCrop"
+            android:src="@drawable/three"
+            app:riv_corner_radius="@dimen/_4sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_toStartOf="@id/tvTotalCoins"
+            android:layout_toEndOf="@id/ivUserProfileImage"
+            android:ellipsize="end"
+            android:fontFamily="@font/lexend_regular"
+            android:maxLines="1"
+            android:text="@string/profile_name"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_12ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalCoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:fontFamily="@font/lexend_regular"
+            android:textColor="@color/color_tab_purple"
+            android:textSize="@dimen/_12ssp"
+            tools:text="12"
+            android:layout_toStartOf="@id/ivCoin"
+            android:layout_marginEnd="@dimen/_6sdp"/>
+        
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCoin"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:src="@drawable/ic_new_coins"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

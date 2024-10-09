@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.chatRoom.videoCall.OneToOneVideoCallActivity">
+
+    <FrameLayout
+        android:id="@+id/flRemoteVideoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/quantum_grey800"/>
+
+    <FrameLayout
+        android:id="@+id/flLocalVideoContainer"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp" />
+
+    <ProgressBar
+        android:id="@+id/tvRinging"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/metropolis_bold"
+        android:text="@string/label_connecting"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15sdp"
+        android:indeterminateTint="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/llVideoCallAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/_15sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/metropolis_bold"
+            tools:text="@string/label_jhon_smith"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp"
+            android:visibility="gone"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/metropolis_bold"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center"
+
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCameraOption"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_white_flip_camera"
+                android:layout_marginEnd="@dimen/_10sdp"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCall"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@drawable/round_app_color"
+                android:backgroundTint="@color/red_google_button"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_call_user" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivMic"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/ic_white_mic_unmute" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivMicMute"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:src="@drawable/ic_white_mic_mute"
+                    android:visibility="gone"/>
+
+            </FrameLayout>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivVideo"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:background="@drawable/round_white_drawable"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/ic_hide_video"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

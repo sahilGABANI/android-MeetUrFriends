@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:cardElevation="@dimen/_3sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_back_new"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toStartOf="@id/flNotification"
+                android:layout_toEndOf="@id/ivBack"
+                android:fontFamily="@font/lexend_semi_bold"
+                android:includeFontPadding="false"
+                android:text="@string/label_chat_room"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_16ssp"
+                />
+
+            <FrameLayout
+                android:id="@+id/flNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_2sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivNotification"
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_new_notifications" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBadgeCount"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:layout_gravity="top|end"
+                    android:background="@drawable/ic_notification_badge"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_8ssp"
+                    android:visibility="gone"
+                    tools:text="2" />
+            </FrameLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/chatRoomNavigationBar"
+        android:layout_below="@id/cvHeader">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@null" />
+
+    </RelativeLayout>
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/chatRoomNavigationBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/white"
+        app:itemIconSize="@dimen/_15sdp"
+        app:menu="@menu/chat_room_bottom_navigation_menu" />
+
+
+</RelativeLayout>

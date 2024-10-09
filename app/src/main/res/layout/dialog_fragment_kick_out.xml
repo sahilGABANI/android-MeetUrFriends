@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_dialog_fragment"
+    android:orientation="vertical"
+    android:minWidth="@dimen/_240sdp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:fontFamily="@font/lexend_regular"
+        android:text="@string/label_kick_out"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_18ssp" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:alpha="0.5"
+        android:fontFamily="@font/lexend_regular"
+        android:gravity="center_horizontal"
+        android:text="@string/label_your_have_kick_out_timer"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_10ssp" />
+
+    <RelativeLayout
+        android:id="@+id/rl5MinContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@drawable/bg_edittext"
+        android:padding="@dimen/_4sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/lexend_regular"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/label_5_minutes"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivUnselected5Min"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:src="@drawable/ic_option_unselected" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSelected5Min"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:src="@drawable/ic_people_selected"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl10MinContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@drawable/bg_edittext"
+        android:padding="@dimen/_4sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/lexend_regular"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/label_10_minutes"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivUnselected10Min"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/ic_option_unselected" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSelected10Min"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:src="@drawable/ic_people_selected"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl20MinContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@drawable/bg_edittext"
+        android:padding="@dimen/_4sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/lexend_regular"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/label_20_minutes"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivUnselected20Min"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/ic_option_unselected" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSelected20Min"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:src="@drawable/ic_people_selected"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl30MinContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@drawable/bg_edittext"
+        android:padding="@dimen/_4sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/lexend_regular"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/label_30_minutes"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivUnselected30Min"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/ic_option_unselected" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSelected30Min"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:src="@drawable/ic_people_selected"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@drawable/bg_edittext"
+        android:fontFamily="@font/lexend_regular"
+        android:hint="@string/label_enter_time_in_minutes"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:padding="@dimen/_8sdp"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvContinue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:background="@drawable/bg_edittext"
+        android:backgroundTint="@color/color_tab_purple"
+        android:fontFamily="@font/lexend_regular"
+        android:gravity="center"
+        android:padding="@dimen/_7sdp"
+        android:text="@string/label_continue"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp" />
+
+
+</LinearLayout>

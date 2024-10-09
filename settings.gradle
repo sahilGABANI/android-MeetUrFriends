@@ -1,0 +1,22 @@
+pluginManagement {
+
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven {
+           url "https://artifactory.img.ly/artifactory/imgly"
+        }
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+rootProject.name = "Meet Friend"
+include ':app'
+include ':install_time_asset_pack'
+include ':lightcompressor'
+include ':videcrop'
+include ':indicator_library'
+include ':filepicker'
+include ':swipe_reveal_layout'
+include ':roundedhorizontalprogress'

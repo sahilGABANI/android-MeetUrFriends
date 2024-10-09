@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:width="@dimen/_10sdp" android:color="@android:color/transparent" />
+            <solid android:color="@color/grey_light_tab_indicator"/>
+            <corners android:radius="@dimen/_50sdp"/>
+        </shape>
+    </item>
+
+</selector>
+<!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    <item>-->
+<!--        <shape android:shape="rectangle">-->
+<!--            <solid android:color="@android:color/transparent" /> &lt;!&ndash;background color of box&ndash;&gt;-->
+<!--        </shape>-->
+<!--    </item>-->
+
+<!--    <item-->
+<!--        android:height="2dp"-->
+<!--        android:gravity="bottom">-->
+<!--        <shape>-->
+<!--            <solid android:color="@color/white" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--</layer-list>-->

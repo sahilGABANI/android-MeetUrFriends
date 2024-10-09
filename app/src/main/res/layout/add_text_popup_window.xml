@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_B3000000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llTextEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSelectedText"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rounded_button_selected"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/iv_add_text_snapkit_camera"
+            android:tint="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/textCenter"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:tint="@color/white"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_align_center" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAddBackGround"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="@dimen/_1sdp"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            app:srcCompat="@drawable/bg_add_text" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivStrikethrough"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="@dimen/_3sdp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_strikethrough" />
+
+        <com.rtugeek.android.colorseekbar.ColorSeekBar
+            android:id="@+id/colorSeekBarInPopPop"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:colorSeekBarVertical="true" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/llEditTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/add_text_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:fontFamily="@font/american_typewriter"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:text=" "
+            android:textColor="@color/color_red"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:textSize="40sp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@id/llTextEdit">
+
+        <SeekBar
+            android:id="@+id/textSizePicker"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-50dp"
+            android:layout_marginBottom="@dimen/_70sdp"
+            android:progress="30"
+            android:rotation="-90"
+            android:max="100"
+            android:thumb="@drawable/seekbar_thumb_custom"
+            android:progressDrawable="@drawable/seekbar_progress_vertical" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/add_text_color_picker_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_alignParentBottom="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/font_picker_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/font_item_view" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

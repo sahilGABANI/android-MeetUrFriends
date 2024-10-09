@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.music.AddMusicActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/llToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:padding="@dimen/_8sdp">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/ivClose"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentStart="true"
+                android:backgroundTint="@drawable/button_background"
+                android:foreground="?attr/selectableItemBackground"
+                android:src="@drawable/ic_close_32x32" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/soundsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/lexend_medium"
+                android:text="@string/label_add_music"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/searchLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_below="@id/llToolBar"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/edittext_back"
+            android:backgroundTint="#B3353535"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/_4sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/searchAppCompatImageView"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:padding="@dimen/_1sdp"
+                android:src="@drawable/ic_search_icon_white"
+                android:tint="@color/white"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/searchAppCompatEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/search_music"
+                android:imeOptions="actionSearch"
+                android:inputType="textCapSentences"
+                android:lines="1"
+                android:maxLength="80"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_34sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            app:layout_collapseMode="pin"
+            android:layout_below="@id/searchLinearLayout"
+            app:tabGravity="fill"
+            app:tabIndicatorHeight="@dimen/_2sdp"
+            app:tabInlineLabel="true"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextAppearance="@style/MusicTabLayoutTextAppearance"
+            app:tabTextColor="@color/white"
+            app:tabMode="scrollable"
+            app:tabIconTint="@color/profile_tab_icon_selector"
+            app:tabIndicatorColor="@color/color_tab_purple"
+            >
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/music_trending" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/music_bollywood" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/music_hollywood" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/music_90s" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/music_2000s" />
+            <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/music_punjabi" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/music_love_songs" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/music_indian_classical" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/music_hip_hop" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/music_lo_fi" />
+        </com.google.android.material.tabs.TabLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tabLayout">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/musicRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/_3sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="vertical"
+                tools:listitem="@layout/music_item_view"/>
+
+            <LinearLayout
+                android:id="@+id/noMusicLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_65sdp"
+                    android:layout_height="@dimen/_65sdp"
+                    android:src="@drawable/ic_no_music" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNoPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/lexend_medium"
+                    android:text="@string/no_music"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

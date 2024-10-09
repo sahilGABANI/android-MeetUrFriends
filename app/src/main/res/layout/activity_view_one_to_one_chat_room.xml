@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/_3sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_back_new" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/ivUserProfileImage"
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                android:layout_toEndOf="@id/ivBack"
+                android:src="@drawable/dummy_profile_pic"
+                app:riv_corner_radius="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_10sdp"/>
+
+            <LinearLayout
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toStartOf="@id/ivVideoCall"
+                android:layout_toEndOf="@id/ivUserProfileImage">
+
+            <RelativeLayout
+                android:id="@+id/rlUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvChatRoomName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxWidth="@dimen/_170sdp"
+                    android:fontFamily="@font/lexend_regular"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:orientation="vertical"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_20ssp"
+                    tools:text="Love BirdsLoveLove BirdsLoveLove BirdsLove" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:id="@+id/ivAccountVerified"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_toRightOf="@+id/tvChatRoomName"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:src="@drawable/ic_icon_verified"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserOnlineStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/lexend_regular"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:orientation="vertical"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_8ssp"
+                tools:text="@string/online" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivVideoCall"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_call_video"
+                android:tint="@color/textColor_Green"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/flContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rlSendMessageContainer"
+        android:layout_below="@id/cvHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCanNotSendMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_light_purple_bg_editext"
+                android:text="@string/desc_message_can_t_be_send_before_you_both_follow_eachother"
+                android:paddingVertical="@dimen/_10sdp"
+                android:textColor="@color/color_text_black"
+                app:fontFamily="@font/lexend_regular"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="gone"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/view_chat_room_message" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/rlSendMessageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/ic_add_image"
+            android:visibility="visible"
+            android:layout_gravity="center_vertical"/>
+
+        <RelativeLayout
+            android:id="@+id/sendMessageRelativeLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_edittext"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/rlReplyContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivReply"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_reply_msg_in_chat"
+                    android:tint="@color/color_text_black_transparent_50"
+                    android:padding="@dimen/_2sdp"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_marginTop="@dimen/_2sdp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivClose"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:src="@drawable/ic_baseline_close_24"
+                    android:tint="@color/color_text_black"
+                    android:layout_alignParentEnd="true"
+                    android:padding="@dimen/_4sdp"
+                    android:layout_margin="@dimen/_2sdp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReplyUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Sadaat Raja - 5 Dec,2022 10:00 am"
+                    android:textSize="@dimen/_12ssp"
+                    android:textColor="@color/color_text_black"
+                    android:alpha="0.5"
+                    android:fontFamily="@font/lexend_regular"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@id/ivReply"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_toStartOf="@id/ivClose"
+                    android:layout_marginTop="@dimen/_2sdp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReplyMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Reply Message"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/color_text_black"
+                    android:alpha="0.5"
+                    android:fontFamily="@font/lexend_regular"
+                    android:layout_below="@id/tvReplyUserName"
+                    android:layout_toEndOf="@id/ivReply"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_toStartOf="@id/ivClose"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="@dimen/_1sdp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/color_text_black_transparent_10"
+                    android:layout_below="@id/tvReplyMessage"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_4sdp"/>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlReplyContainer"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="0dp"
+                android:layout_toStartOf="@id/ivSend"
+                android:background="@null"
+                android:fontFamily="@font/lexend_regular"
+                android:hint="@string/hint_type_a_message"
+                android:imeOptions="actionSend"
+                android:maxHeight="@dimen/_100sdp"
+                android:padding="@dimen/_7sdp"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSend"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="@dimen/_34sdp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_send_message"
+                android:layout_below="@id/rlReplyContainer"/>
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivGift"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:src="@drawable/ic_gift_chat"
+            android:visibility="visible"
+            android:padding="@dimen/_2sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/_2sdp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRequestGift"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:src="@drawable/ic_request_gift_in_chat"
+            android:visibility="visible"
+            android:padding="@dimen/_2sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/_2sdp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

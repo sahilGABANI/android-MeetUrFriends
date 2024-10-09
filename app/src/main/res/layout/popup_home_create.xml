@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_6sdp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginEnd="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:minWidth="@dimen/_50sdp">
+
+            <LinearLayout
+                android:id="@+id/llPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_4sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:src="@drawable/ic_home_create_post"
+                    android:layout_gravity="center_vertical" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/post"
+                    android:fontFamily="@font/lexend_regular"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_10ssp"
+                    android:padding="@dimen/_3sdp"
+                    android:layout_marginStart="@dimen/_5sdp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llShorts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_4sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:src="@drawable/ic_home_create_short"
+                    android:layout_gravity="center_vertical"
+                    android:tint="@color/color_text_black"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shorts"
+                    android:fontFamily="@font/lexend_regular"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_10ssp"
+                    android:padding="@dimen/_3sdp"
+                    android:layout_marginStart="@dimen/_5sdp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llChalleng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_4sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:src="@drawable/ic_home_create_challeng"
+                    android:layout_gravity="center_vertical"
+                    android:tint="@color/color_text_black"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/challenges"
+                    android:fontFamily="@font/lexend_regular"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_10ssp"
+                    android:padding="@dimen/_3sdp"
+                    android:layout_marginStart="@dimen/_5sdp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

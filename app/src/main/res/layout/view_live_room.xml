@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_4sdp">
+
+        <com.meetfriend.app.newbase.view.SquareFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/liveUserImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dummy_profile_pic"
+                app:riv_corner_radius="@dimen/_15sdp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_6sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_live_icon" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:fontFamily="@font/lexend_regular"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    android:gravity="center"
+                    android:text="@string/label_live" />
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/watchingCountAppCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_live_stream_watching_eye"
+                android:drawablePadding="@dimen/_6sdp"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center_vertical|end"
+                android:padding="@dimen/_6sdp"
+                android:layout_gravity="end"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                tools:text="@string/watching_count_default"
+                android:visibility="gone"/>
+
+        </com.meetfriend.app.newbase.view.SquareFrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="@dimen/_4ssp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLiveUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/lexend_regular"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_12ssp"
+                tools:text="Baby Base" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAccountVerified"
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_toEndOf="@id/tvLiveUserName"
+                android:paddingTop="@dimen/_2sdp"
+                android:src="@drawable/ic_icon_verified"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

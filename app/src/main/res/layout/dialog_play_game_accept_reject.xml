@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/_20sdp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_fragment"
+        android:gravity="center"
+        android:minWidth="@dimen/_240sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend_regular"
+            android:text="@string/label_play_game"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_16ssp" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivUserProfile"
+            android:layout_width="@dimen/_56sdp"
+            android:layout_height="@dimen/_56sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_empty_profile_placeholder"
+            app:riv_corner_radius="@dimen/_6sdp" />
+
+
+        <RelativeLayout
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:id="@+id/rlUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="@dimen/_18sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:fontFamily="@font/lexend_regular"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_14ssp"
+                tools:text="Darell Steve" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAccountVerified"
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_toEndOf="@id/tvUsername"
+                android:paddingTop="@dimen/_2sdp"
+                android:src="@drawable/ic_icon_verified"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:fontFamily="@font/lexend_regular"
+            android:text="@string/label_do_you_want_to_play_game"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_12ssp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp">
+
+            <LinearLayout
+                android:id="@+id/llAcceptRejectButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAccept"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edittext"
+                    android:backgroundTint="@color/color_tab_purple"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/label_start_game"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:cornerRadius="@dimen/_6sdp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/bg_edittext"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/label_not_now"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_12ssp"
+                    app:cornerRadius="@dimen/_6sdp"
+                    app:strokeWidth="@dimen/_2sdp" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:clickable="false"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

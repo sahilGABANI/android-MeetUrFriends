@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    app:layoutDescription="@xml/camera_layout_scene"
+    tools:showPaths="true">
+
+    <ImageButton
+        android:id="@+id/ivClose"
+        android:layout_width="@dimen/camera_secondary_control_size"
+        android:layout_height="@dimen/camera_secondary_control_size"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/rounded_button"
+        android:elevation="10dp"
+        android:src="@drawable/close_24x24" />
+
+    <View
+        android:id="@+id/preview_gesture_handler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ViewStub
+        android:id="@+id/camera_kit_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/llCameraOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@drawable/bg_snap_option"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_5sdp">
+
+        <ImageButton
+            android:id="@+id/lenses_explore_button"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rounded_button"
+            android:src="@drawable/lens_explore_44x44"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/camera_flip_button"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:layout_gravity="center"
+            android:background="@drawable/rounded_button"
+            android:src="@drawable/camera_flip_44x44" />
+
+        <ImageButton
+            android:id="@+id/cameraDualButton"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            android:background="@drawable/rounded_button"
+            android:src="@drawable/dual_camera"
+            android:padding="@dimen/_2sdp"
+            app:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/speed_button"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_gravity="center"
+            android:padding="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/rounded_button"
+            android:src="@drawable/ic_snap_speed"
+            android:visibility="visible" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPlayBackSpeedNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/lexend_bold"
+            android:text="1x"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:visibility="gone"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/timer_button"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:src="@drawable/ic_snap_timer"
+            android:visibility="visible"
+            android:clickable="true"
+            android:padding="@dimen/_4sdp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/color_transparent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/flashOnButton"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/rounded_button"
+            android:src="@drawable/ic_snap_flash_off"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/flashOffButton"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/rounded_button_selected"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_snap_flash_on"
+            android:tint="@color/black"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/openGalleryRoundedImageView"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:src="@drawable/ic_import_image"
+            android:visibility="visible"
+            android:clickable="true"
+            android:padding="@dimen/_4sdp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/color_transparent" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_toStartOf="@id/llCameraOption"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_5sdp">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/flipCameraTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center_vertical|end"
+            android:visibility="invisible"
+            android:text="@string/flip_camera"
+            android:textSize="14sp"
+            android:fontFamily="@font/lexend_bold"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dualCameraTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:gravity="center_vertical|end"
+            android:visibility="invisible"
+            android:text="@string/dual_camera"
+            android:textSize="14sp"
+            android:fontFamily="@font/lexend_bold"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/playbackSpeedTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center_vertical|end"
+            android:visibility="gone"
+            android:text="@string/label_speed"
+            android:textSize="14sp"
+            android:fontFamily="@font/lexend_bold"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/timerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center_vertical|end"
+            android:visibility="invisible"
+            android:text="@string/label_timer"
+            android:textSize="14sp"
+            android:fontFamily="@font/lexend_bold"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/flashTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:gravity="center_vertical|end"
+            android:visibility="invisible"
+            android:text="@string/flash"
+            android:textSize="14sp"
+            android:fontFamily="@font/lexend_bold"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/galleryTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center_vertical|end"
+            android:visibility="invisible"
+            android:text="@string/label_import_media"
+            android:textSize="14sp"
+            android:fontFamily="@font/lexend_bold"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llPlayBackSpeedPopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/llCameraOption"
+        android:background="@drawable/rounded_corner_register"
+        android:backgroundTint="@color/grey_action_transparent_80"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend_bold"
+            android:text="@string/label_playback_speed"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPlayBackSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend_medium"
+            android:text="@string/label_normal"
+            android:textColor="@color/color_tab_purple"
+            android:includeFontPadding="false"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_4sdp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_9sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSpeedSlow"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:text="@string/label_speed_slow_number"
+                android:textColor="@color/white"
+                android:fontFamily="@font/lexend_bold"
+                android:textSize="@dimen/_14ssp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="@color/white_50_opacity"
+                android:padding="@dimen/_5sdp"
+                android:includeFontPadding="false"
+                android:gravity="center"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSpeedNormal"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:text="@string/label_speed_normal_number"
+                android:textColor="@color/white"
+                android:fontFamily="@font/lexend_bold"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="@color/white_50_opacity"
+                android:paddingVertical="@dimen/_3sdp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:includeFontPadding="false"
+                android:gravity="center"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSpeedUltra"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:text="@string/label_speed_fast_number"
+                android:textColor="@color/white"
+                android:fontFamily="@font/lexend_bold"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="@color/white_50_opacity"
+                android:paddingVertical="@dimen/_3sdp"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:includeFontPadding="false"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvVideoTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_00_01"
+        android:textSize="@dimen/_14ssp"
+        android:background="@drawable/bg_rounded_transparent_black"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:paddingVertical="@dimen/_3sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/lexend_regular"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textSize="@dimen/_34ssp"
+        android:layout_above="@id/rlBottom"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/lexend_bold"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/rlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <com.snap.camerakit.support.widget.SnapButtonView
+            android:id="@+id/capture_button"
+            android:layout_width="@dimen/camera_capture_button_size"
+            android:layout_height="@dimen/camera_capture_button_size"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:elevation="10dp"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSelectedFilter"
+            android:layout_width="@dimen/camera_capture_button_size"
+            android:layout_height="@dimen/camera_capture_button_size"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:padding="@dimen/_10sdp"
+            android:visibility="gone"
+            />
+
+        <!--progress bar implementation-->
+        <ProgressBar
+            android:elevation="10dp"
+            android:visibility="visible"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="86dp"
+            android:layout_height="80dp"
+            android:background="@drawable/progress_drawable"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/rounded_progress"
+            android:textAlignment="center" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSelectLense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:src="@drawable/ic_snap_filter"
+            android:visibility="gone"
+            android:layout_toEndOf="@id/capture_button"
+            android:layout_alignTop="@id/capture_button"
+            android:layout_alignBottom="@id/capture_button"
+            android:layout_marginStart="@dimen/_15sdp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCloseFilter"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:src="@drawable/close_filter_icon"
+            android:layout_below="@id/capture_button"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lenses_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingStart="150dp"
+            android:paddingEnd="150dp"
+            android:visibility="visible"
+            tools:listitem="@layout/lens_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_alignTop="@id/capture_button"
+            android:layout_alignBottom="@id/capture_button"
+            android:layout_centerVertical="true"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/videoButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignTop="@id/capture_button"
+            android:src="@drawable/snap_video_pause"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/mediaTypeLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivCloseFilter"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/photoAppCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_semi_bold"
+                android:padding="@dimen/_6sdp"
+                android:text="@string/label_photo"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/videoAppCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_semi_bold"
+                android:padding="@dimen/_6sdp"
+                android:text="@string/label_video"
+                android:textColor="@color/color_A7A7A7" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/multipleMediaLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mediaTypeLinearLayout"
+            android:layout_centerHorizontal="true"
+            android:background="@color/black"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMultipleMedia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/tvUndoLinearLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvUndo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/undo"
+                        android:textColor="@color/black"
+                        android:layout_alignParentStart="true"
+                        android:background="@drawable/bg_completed_challenge"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/lexend_semi_bold"
+                        android:textSize="@dimen/_12ssp"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:includeFontPadding="false"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tvUploadLinearLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvUpload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/bg_completed_challenge"
+                        android:backgroundTint="@color/color_tab_purple"
+                        android:fontFamily="@font/lexend_semi_bold"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:text="@string/label_upload"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tvDoneLinearLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:background="@drawable/bg_completed_challenge"
+                        android:backgroundTint="@color/color_tab_purple"
+                        android:fontFamily="@font/lexend_semi_bold"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:text="@string/preview"
+                        android:textColor="@color/white"
+                        android:visibility="visible"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

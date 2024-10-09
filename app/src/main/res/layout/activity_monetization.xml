@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.monetization.MonetizationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/headerLoginBackButton"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:padding="13dp"
+            android:src="@drawable/ic_white_arrow_back_"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            android:src="@drawable/ic_app_logo_with_icon_text"
+            android:layout_toEndOf="@+id/headerLoginBackButton" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/headerInfoBackButton"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentEnd="true"
+            android:padding="13dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_info_target"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/earinglayout"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:visibility="gone"
+        android:background="@drawable/ic_target_bg"
+        android:layout_margin="@dimen/_10sdp"
+        android:padding="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/trophy"
+            android:id="@+id/title"
+            android:text="Total Earnings"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:id="@+id/earnPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:layout_toStartOf="@+id/trophy"
+            android:text="$ 0.0"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/earnPoint"
+            android:layout_marginTop="8dp"
+            android:text="Withdraw"
+            android:textColor="#6961F3"
+            android:textSize="20sp"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:id="@+id/withdraw"
+            android:paddingTop="2dp"
+            android:layout_marginStart="10dp"
+            android:paddingBottom="2dp"
+            android:background="@drawable/withdraw_bg"
+            android:layout_alignParentStart="true"/>
+        <ImageView
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_trophy_info_lite_gray"
+            android:scaleType="center"
+            android:id="@+id/trophy"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/targetlayout"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/tab_bg"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            app:tabBackground="@drawable/tablayout_selector_bg"
+            app:tabGravity="fill"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabIndicatorColor="@null"
+            app:tabMode="fixed"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            app:tabRippleColor="@null"
+            app:tabSelectedTextColor="#ffffff"
+            app:tabTextColor="#6A6969" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/eligibility"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/gradient_bg"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="Eligibility Criteria"
+            android:gravity="center"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="14sp"
+            android:layout_marginEnd="@dimen/_17sdp"
+            android:layout_marginStart="@dimen/_17sdp"
+            android:textColor="@color/black"
+            android:text="You need to complete this eligibility criteria to participate in monetization and earn money"/>
+
+    </LinearLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

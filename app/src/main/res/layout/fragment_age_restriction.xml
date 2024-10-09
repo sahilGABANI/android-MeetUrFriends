@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <RelativeLayout
+        android:layout_width="@dimen/_235sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_fragment"
+        android:minWidth="@dimen/_235sdp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:src="@drawable/ic_new_close"
+            android:tint="@color/icon_un_Selected" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivClose"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:fontFamily="@font/lexend_regular"
+            android:text="@string/label_are_you_an_adult_or_child"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAdult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend_regular"
+            android:text="@string/label_adult"
+            android:layout_below="@id/tvQuestion"
+            android:textColor="@color/white"
+            android:layout_alignStart="@id/tvQuestion"
+            android:layout_alignEnd="@id/tvQuestion"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_12ssp"
+            android:background="@drawable/rounded_grey_background"
+            android:paddingVertical="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:backgroundTint="@color/color_0FADFF"
+            android:gravity="center" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvChild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend_regular"
+            android:text="@string/label_child"
+            android:layout_below="@id/tvAdult"
+            android:textColor="@color/white"
+            android:layout_alignStart="@id/tvQuestion"
+            android:layout_alignEnd="@id/tvQuestion"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:textSize="@dimen/_12ssp"
+            android:background="@drawable/rounded_grey_background"
+            android:paddingVertical="@dimen/_10sdp"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:backgroundTint="@color/color_0FADFF"
+            android:gravity="center" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

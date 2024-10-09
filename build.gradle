@@ -1,0 +1,47 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext{
+        kotlin_version = "1.5.32"
+        rxJava_version = '2.2.21'
+        rxAndroid_version = '2.1.1'
+        dagger_version = '2.52'
+        rxbinding_version = '3.1.0'
+        retrofit_version = '2.11.0'
+        retrofit_rxJava_version = '2.9.0'
+        okhttp_version = '4.9.0'
+        billing_version = "5.0.0"
+        pesdk_version = '10.7.3' // Insert the latest SDK version here. You will find it here https://github.com/imgly/pesdk-android-demo/releases
+
+    }
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.2'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0'
+        classpath 'com.google.gms:google-services:4.4.2'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:3.0.2'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven {
+            url "https://sdk.developer.deepar.ai/maven-android-repository/releases/"
+        }
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.layout.buildDirectory.get().asFile
+}
+

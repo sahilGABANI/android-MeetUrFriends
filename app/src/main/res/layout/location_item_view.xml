@@ -1,0 +1,52 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rlLocation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="@dimen/_4sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLocationIcon"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_location" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLocationName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toEndOf="@id/ivLocationIcon"
+            android:fontFamily="@font/lexend_medium"
+            android:includeFontPadding="false"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="@string/marting_place" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLocationFormatted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvLocationName"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:includeFontPadding="false"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="@font/lexend_regular"
+            android:layout_toEndOf="@id/ivLocationIcon"
+            android:textColor="@color/color_text_black_transparent_50"
+            android:textSize="@dimen/_12ssp"
+            tools:text="@string/kalakue_avenue_honolulu_hi_united_states" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

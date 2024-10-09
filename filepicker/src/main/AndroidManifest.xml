@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:supportsRtl="true"
+        tools:targetApi="q">
+        <activity
+            android:name="droidninja.filepicker.FilePickerActivity"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name="droidninja.filepicker.MediaDetailsActivity"
+            android:configChanges="orientation|screenSize"/>
+
+        <provider
+            android:name="droidninja.filepicker.utils.FilePickerProvider"
+            android:authorities="${applicationId}.droidninja.filepicker.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+    </application>
+
+</manifest>

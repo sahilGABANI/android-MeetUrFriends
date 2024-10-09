@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.chauthai.swipereveallayout.SwipeRevealLayout
+        android:id="@+id/swipeRevelRight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:dragEdge="right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mode="same_level">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_delete_24"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="center_vertical"
+                    android:text="@string/label_delete"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_marginTop="@dimen/_2sdp"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardElevation="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_margin="@dimen/_5sdp">
+
+                <RelativeLayout
+                    android:id="@+id/rlChatRoomDataContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/ivProfileImage"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_alignParentStart="true"
+                        android:scaleType="centerCrop"
+                        app:riv_border_color="@color/white"
+                        app:riv_border_width="@dimen/_1sdp"
+                        app:riv_corner_radius="@dimen/_8sdp"
+                        tools:src="@drawable/dummy_profile_pic" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_toEndOf="@id/ivProfileImage"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_gravity="center_vertical"
+                            android:id="@+id/rlUser"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvChatRoomName"
+                                android:layout_width="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/lexend_regular"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12ssp"
+                                tools:text="Best Friends Forever" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivAccountVerified"
+                                android:layout_width="@dimen/_14sdp"
+                                android:layout_height="@dimen/_14sdp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_2sdp"
+                                android:layout_toEndOf="@id/tvChatRoomName"
+                                android:paddingTop="@dimen/_2sdp"
+                                android:src="@drawable/ic_icon_verified"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llUserCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="@dimen/_13sdp"
+                                android:layout_height="@dimen/_13sdp"
+                                android:src="@drawable/ic_user_profile" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvUserCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_6sdp"
+                                android:fontFamily="@font/lexend_light"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10ssp"
+                                tools:text="20" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvLastMessage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:ellipsize="end"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/lexend_regular"
+                                android:maxLines="1"
+                                android:maxEms="8"
+                                android:maxLength="50"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                tools:text="Hello" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvDotted"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_toEndOf="@id/tvLastMessage"
+                                android:layout_marginTop="@dimen/_minus11sdp"
+                                android:ellipsize="middle"
+                                android:fontFamily="@font/lexend_regular"
+                                android:textColor="@color/grey"
+                                android:layout_marginStart="@dimen/_2sdp"
+                                android:textSize="@dimen/_20ssp"
+                                android:text="@string/label_dot"/>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvLastMessageTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/lexend_regular"
+                                android:layout_toEndOf="@id/tvDotted"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_2sdp"
+                                android:maxLines="1"
+                                android:textColor="@color/grey"
+                                android:textSize="@dimen/_10ssp"
+                                tools:text="Hello"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvUnReadMessageCount"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:background="@drawable/ic_notification_badge"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/color_tab_purple"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8ssp"
+                        tools:text="9+"
+                        android:gravity="center"
+                        app:fontFamily="@font/lexend_regular"
+                        android:visibility="gone"/>
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+    </com.chauthai.swipereveallayout.SwipeRevealLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

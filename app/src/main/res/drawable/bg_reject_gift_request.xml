@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:top="@dimen/_minus2sdp"
+        android:left="@dimen/_minus2sdp">
+        <shape android:shape="rectangle">
+            <corners android:bottomRightRadius="@dimen/_8sdp" />
+            <stroke android:width="@dimen/one_half_dp"
+                android:color="@color/color_tab_purple"/>
+            <solid android:color="@color/color_reject_gift_request"/>
+        </shape>
+    </item>
+
+</layer-list>

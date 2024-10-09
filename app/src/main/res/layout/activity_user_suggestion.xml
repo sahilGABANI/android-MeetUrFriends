@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.suggestion.UserSuggestionActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_16sdp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/headerAppLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:src="@drawable/ic_app_logo_with_icon_text" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/skipAppCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_skip"
+            android:layout_alignParentEnd="true"
+           android:layout_centerVertical="true"
+            android:fontFamily="@font/lexend_regular"
+            android:textColor="@color/color_tab_purple"
+            android:textSize="@dimen/_11ssp"
+            android:padding="@dimen/_5sdp"/>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/SuggestionFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_8sdp" />
+
+</LinearLayout>

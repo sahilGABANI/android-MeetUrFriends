@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/_8sdp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/llGiftItemContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top|center_horizontal"
+            android:orientation="vertical"
+            android:longClickable="true"
+            android:visibility="visible">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/giftAppCompatImageView"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:paddingStart="@dimen/_6sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingEnd="@dimen/_6sdp"
+                android:src="@drawable/giftbox_placeholder" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/giftNameAppCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_regular"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_8ssp"
+                tools:text="Rose"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:src="@drawable/ic_new_coins" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/coinAppCompatTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:fontFamily="@font/lexend_medium"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_9ssp"
+                    tools:text="10.0" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/giftActionAppCompatTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_medium"
+                android:gravity="center"
+                android:padding="@dimen/_2sdp"
+                android:text="@string/label_send"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9ssp"
+                android:background="@drawable/bg_send"
+                android:backgroundTint="@color/color_tab_purple"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCombo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:background="@drawable/white_round"
+            android:backgroundTint="@color/color_light_purple_bg_editext"
+            android:fontFamily="@font/lexend_medium"
+            android:gravity="center"
+            android:text="@string/label_combo"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            android:layout_marginHorizontal="@dimen/_5sdp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/comboAnimation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_58sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:scaleType="fitXY"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/gift_combo_animation"
+            app:lottie_loop="true"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:visibility="gone"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvComboCount"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/white_round"
+            android:backgroundTint="@color/color_tab_purple"
+            tools:text="10"
+            android:gravity="center"
+            android:fontFamily="@font/lexend_medium"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            android:layout_gravity="top|center_horizontal"
+            android:includeFontPadding="false"
+            />
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

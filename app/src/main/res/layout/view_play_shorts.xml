@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.meetfriend.app.videoplayer.JzvdStdOutgoer
+            android:id="@+id/jzvdStdOutgoer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:id="@+id/linkAttachmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"/>
+
+        <RelativeLayout
+            android:id="@+id/rlShortsDataContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_toStartOf="@id/llActionContainer"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/llProfileDataContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_above="@id/tvDescription"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/ivUserProfileImage"
+                        android:layout_width="@dimen/_36sdp"
+                        android:layout_height="@dimen/_36sdp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_empty_profile_placeholder"
+                        app:riv_border_color="@color/white"
+                        app:riv_border_width="@dimen/_1sdp"
+                        app:riv_corner_radius="@dimen/_6sdp"
+                        android:layout_marginTop="@dimen/_5sdp"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLiveBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|center"
+                        android:background="@drawable/bg_live_badge"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:paddingHorizontal="4dp"
+                        android:paddingVertical="@dimen/_1sdp"
+                        android:text="@string/label_live"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_8ssp"
+                        android:visibility="gone"
+                        app:fontFamily="@font/lexend_medium"
+                        app:textAllCaps="true"
+                        android:layout_centerHorizontal="true"/>
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_gravity="center_vertical"
+                            android:id="@+id/rlUser"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/storyLinearLayout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_centerVertical="true"
+                                android:id="@+id/tvName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/lexend_semi_bold"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_11ssp"
+                                tools:text="Ruffles" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivAccountVerified"
+                                android:layout_width="@dimen/_14sdp"
+                                android:layout_height="@dimen/_14sdp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_2sdp"
+                                android:layout_toEndOf="@id/tvName"
+                                android:paddingTop="@dimen/_2sdp"
+                                android:src="@drawable/ic_icon_verified"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvFollow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/white_outline"
+                                android:fontFamily="@font/lexend_regular"
+                                android:gravity="center"
+                                android:paddingHorizontal="@dimen/_7sdp"
+                                android:paddingVertical="@dimen/_3sdp"
+                                android:text="@string/label_follow"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_9ssp"
+                                android:visibility="gone" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvFollowing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/white_outline"
+                                android:fontFamily="@font/lexend_regular"
+                                android:gravity="center"
+                                android:minWidth="@dimen/_80sdp"
+                                android:paddingVertical="@dimen/_4sdp"
+                                android:text="@string/following"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10ssp"
+                                android:visibility="gone" />
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvUserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/lexend_light"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9ssp"
+                        tools:text="Ruffles" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvShortsTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:fontFamily="@font/lexend_light"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9ssp"
+                        android:visibility="gone"
+                        tools:text="10h ago" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <com.meetfriend.app.newbase.view.socialview.widget.SocialTextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/musicLinearLayout"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/lexend_regular"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/color_C0C0C0"
+                android:textSize="@dimen/_11ssp"
+                android:visibility="gone"
+                app:hashtagColor="@color/white"
+                app:mentionColor="@color/white"
+                app:socialFlags="mention|hashtag"
+                tools:text="@string/hyper_link" />
+
+
+            <LinearLayout
+                android:id="@+id/musicLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginVertical="@dimen/_4sdp"
+                android:background="@drawable/rounded_music_bg"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:paddingVertical="@dimen/_4sdp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_4sdp"
+                    android:src="@drawable/ic_music" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMusicName"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/lexend_regular"
+                    android:lines="1"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:singleLine="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="bold"
+                    tools:text="Rossi Alessandro" />
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llActionContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_16sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/giftAppCompatImageView"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_updated_gift"
+                app:tint="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGiftCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                tools:text="0"
+                android:layout_marginTop="@dimen/_minus3sdp"/>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLike"
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/ic_heart" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLikeCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                tools:text="0"
+                android:layout_marginTop="@dimen/_minus2sdp"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivShortsViewIcon"
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_5sdp"
+                android:tint="@color/white"
+                android:src="@drawable/ic_view_icon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvShortsViewCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                tools:text="0"
+                android:layout_marginTop="@dimen/_minus2sdp"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivComment"
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_new_comment" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCommentCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                tools:text="0"
+                android:layout_marginTop="@dimen/_minus2sdp"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDownload"
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_new_save_shorts" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/label_download"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8ssp"
+                android:visibility="invisible"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/shareAppCompatImageView"
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_new_share_icon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvShareCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/label_share"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8ssp"
+                android:visibility="invisible"/>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/moreAppCompatImageView"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_more_nav_grey"
+                android:tint="@color/white"
+                android:layout_marginTop="@dimen/_minus4sdp"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

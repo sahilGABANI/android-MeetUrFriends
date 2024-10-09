@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/_20sdp"
+    android:paddingBottom="@dimen/_5sdp"
+    android:paddingEnd="@dimen/_20sdp"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="@dimen/size_zero"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/viewUpper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical|center"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:src="@drawable/ic_bsv_header_line" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_edittext"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlCoins"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/availableCoinsAppCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_22ssp"
+                app:fontFamily="@font/lexend_extra_bold"
+                tools:text="200.00" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_toEndOf="@id/availableCoinsAppCompatTextView"
+                android:src="@drawable/ic_new_coins"
+                android:padding="@dimen/_2sdp" />
+
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_below="@id/rlCoins"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/lexend_light"
+            android:text="@string/label_available_coins"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            android:layout_marginTop="@dimen/_6sdp"/>
+
+    </RelativeLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend_medium"
+        android:text="@string/hint_enter_coin"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/_12ssp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etEnterCoins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:background="@drawable/bg_ediitext_border"
+        android:fontFamily="@font/lexend_regular"
+        android:hint="@string/hint_enter_coin"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:maxLength="20"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/color_text_black"
+        android:textColorHint="@color/color_text_black_transparent_50"
+        android:textSize="@dimen/_12ssp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_16sdp">
+
+        <LinearLayout
+            android:id="@+id/llBtnCreateCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_weight="1"
+                android:id="@+id/tvCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center_horizontal"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/label_cancel"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_12ssp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:id="@+id/tvSend"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext"
+                android:backgroundTint="@color/color_tab_purple"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center_horizontal"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/label_send"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="false"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

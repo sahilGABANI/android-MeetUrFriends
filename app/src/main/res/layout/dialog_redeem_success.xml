@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_fragment"
+        android:gravity="center"
+        android:minWidth="@dimen/_235sdp"
+        android:minHeight="@dimen/_250sdp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRedeemStatus"
+            android:layout_width="@dimen/_68sdp"
+            android:layout_height="@dimen/_68sdp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_redeem_sucess" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/lexend_semi_bold"
+            android:text="@string/label_200"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_26ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRedeemSuccess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:fontFamily="@font/lexend_regular"
+            android:gravity="center"
+            android:text="@string/desc_success_redeem"
+            android:textColor="@color/color_808089"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_6sdp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRedeemRejected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:fontFamily="@font/lexend_regular"
+            android:gravity="center"
+            android:text="@string/desc_rejected_redeem"
+            android:textColor="@color/color_808089"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:visibility="gone"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOk"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bg_edittext"
+            android:backgroundTint="@color/color_tab_purple"
+            android:fontFamily="@font/lexend_regular"
+            android:gravity="center"
+            android:padding="@dimen/_7sdp"
+            android:text="@string/ef_ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

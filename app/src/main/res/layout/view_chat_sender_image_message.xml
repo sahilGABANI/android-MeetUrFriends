@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.chauthai.swipereveallayout.SwipeRevealLayout
+        android:id="@+id/swipeRevelRight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:dragEdge="left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mode="same_level">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/red_google_button"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="@string/label_delete"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rlMessageContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:padding="@dimen/_2sdp"
+                android:visibility="visible"
+                android:gravity="end">
+
+
+                <FrameLayout
+                    android:id="@+id/flMessageContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/ivMessage"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_marginStart="@dimen/_6sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_placer_holder_image_new"
+                        app:riv_corner_radius_bottom_left="@dimen/_8sdp"
+                        app:riv_corner_radius_top_left="@dimen/_8sdp"
+                        app:riv_corner_radius_top_right="@dimen/_8sdp" />
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/ivPlay"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_6sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_6sdp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/exo_controls_play"
+                        android:visibility="gone"
+                        app:riv_corner_radius_bottom_left="@dimen/_8sdp"
+                        app:riv_corner_radius_bottom_right="@dimen/_8sdp"
+                        app:riv_corner_radius_top_right="@dimen/_8sdp" />
+
+                </FrameLayout>
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivSave"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_save_chat_msg"
+                    android:tint="@color/color_text_black_transparent_50"
+                    android:visibility="gone"
+                    android:layout_alignParentStart="true"/>
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ivUserProfileImage"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dummy_profile_pic"
+                    app:riv_corner_radius="@dimen/_3sdp"
+                    android:layout_below="@id/flMessageContainer"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_10sdp"/>
+
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+    </com.chauthai.swipereveallayout.SwipeRevealLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

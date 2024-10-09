@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="post_height">@dimen/_280sdp</dimen>
+    <dimen name="cover_height">@dimen/_210sdp</dimen>
+
+
+
+    <dimen name="size_zero">0dp</dimen>
+
+
+
+
+    <dimen name="size_one">1dp</dimen>
+
+
+    <dimen name="one_half_dp">1.5dp</dimen>
+
+    <dimen name="half_dp">0.5dp</dimen>
+
+
+    <dimen name="size_fifty">50dp</dimen>
+
+    <dimen name="camera_lens_item_corner_radius">12dp</dimen>
+    <dimen name="camera_secondary_control_size">44dp</dimen>
+    <dimen name="camera_secondary_control_margin">24dp</dimen>
+    <dimen name="camera_capture_button_size">80dp</dimen>
+    <dimen name="camera_capture_button_margin_bottom">88dp</dimen>
+    <dimen name="camera_snap_attribution_margin_top">40dp</dimen>
+    <dimen name="camera_preview_corner_radius">16dp</dimen>
+    <dimen name="lenses_carousel_margin_bottom">0dp</dimen>
+    <dimen name="lenses_carousel_height">152dp</dimen>
+    <dimen name="lenses_carousel_close_button_margin_bottom">20dp</dimen>
+    <dimen name="tab_indicator_width">22dp</dimen>
+    <dimen name="tab_indicator_height">5dp</dimen>
+    <!--  VIDEO TRIMMER -->
+    <dimen name="frames_video_height">60dip</dimen>
+    <dimen name="text_small">@dimen/_10sdp</dimen>
+
+</resources>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Platform.MaterialComponents.Light"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/_10sdp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/outerCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        app:cardBackgroundColor="@color/mantis"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="0dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:background="@color/white"
+            android:elevation="0dp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:id="@+id/mainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:padding="@dimen/_14sdp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/lexend_medium"
+                        android:maxLines="1"
+                        android:text="@string/label_redeem"
+                        android:textColor="@color/smoky_black"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/tvCategory"
+                        android:paddingHorizontal="@dimen/_8sdp"
+                        android:paddingVertical="@dimen/_2sdp"
+                        tools:text="@string/label_approved"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:fontFamily="@font/lexend_regular"
+                        android:textColor="@color/mantis"
+                        android:textSize="@dimen/_10ssp"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/lexend_regular"
+                        android:maxLines="1"
+                        android:text="@string/earnings_total"
+                        android:textColor="@color/smoky_black"
+                        android:textSize="@dimen/_12ssp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/secondContainerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTaskDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/lexend_regular"
+                        android:maxLines="1"
+                        android:text="@string/earnings_tasks_date"
+                        android:textColor="@color/color_808089"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="visible"
+                        android:layout_toStartOf="@id/ivPayPal"
+                        android:layout_marginEnd="@dimen/_10sdp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPayPal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_paypal" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

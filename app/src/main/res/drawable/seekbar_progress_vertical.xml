@@ -1,0 +1,23 @@
+<!-- seekbar_custom_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background for the seekbar with padding -->
+    <item android:id="@android:id/background"
+        android:top="6.5dp"
+        android:bottom="6.5dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <corners android:radius="7dp" />
+        </shape>
+    </item>
+    <!-- Progress for the seekbar with padding -->
+    <item android:id="@android:id/progress"
+        android:top="6.5dp"
+        android:bottom="6.5dp">
+        <clip>
+            <shape android:shape="rectangle">
+                <solid android:color="@color/white" />
+                <corners android:radius="7dp" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

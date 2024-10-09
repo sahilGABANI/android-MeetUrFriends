@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml:2:1-4:12
+INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml:2:1-4:12
+	package
+		INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml
+		ADDED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml:2:1-4:12
+		INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml:2:1-4:12
+uses-sdk
+INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml
+INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml
+INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml
+INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml
+		ADDED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml
+		INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml
+		ADDED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml
+		INJECTED from /Users/imac/Documents/Sahil/AndroidProjects/android-/video_trimmer/src/main/AndroidManifest.xml

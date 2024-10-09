@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rlMessageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:orientation="horizontal"
+        android:padding="@dimen/_2sdp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvGiftContainer"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:cardElevation="0dp"
+            android:layout_alignParentEnd="true">
+
+            <RelativeLayout
+                android:id="@+id/giftDataRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_chat_sender_gift">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/giftAppCompatImageView"
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="@dimen/_4sdp"
+                        android:src="@drawable/ic_gift_chat" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/giftNameAppCompatTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/lexend_medium"
+                        tools:text="Dreamy Duck"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_12sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:src="@drawable/ic_new_coins" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/totalCoinsAppCompatTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_3sdp"
+                            android:fontFamily="@font/lexend_medium"
+                            android:textColor="@color/color_text_black"
+                            android:textSize="@dimen/_11ssp"
+                            tools:text="340" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sentReceivedAppCompatTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="@dimen/one_half_dp"
+                    android:layout_marginTop="@dimen/one_half_dp"
+                    android:layout_marginEnd="@dimen/one_half_dp"
+                    android:layout_marginBottom="@dimen/one_half_dp"
+                    android:background="@drawable/bg_send_sender"
+                    android:backgroundTint="@color/color_tab_purple"
+                    android:fontFamily="@font/lexend_medium"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/label_sent"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_9ssp"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:id="@+id/acceptRejectLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/acceptAppCompatTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_accept_gift_request"
+                        android:fontFamily="@font/lexend_medium"
+                        android:gravity="center"
+                        android:padding="@dimen/_4sdp"
+                        android:text="@string/label_accept"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9ssp"
+                        android:includeFontPadding="false"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/rejectAppCompatTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_reject_gift_request"
+                        android:fontFamily="@font/lexend_medium"
+                        android:gravity="center"
+                        android:padding="@dimen/_4sdp"
+                        android:text="@string/label_reject"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9ssp"
+                        android:includeFontPadding="false"/>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivUserProfileImage"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dummy_profile_pic"
+            app:riv_corner_radius="@dimen/_3sdp"
+            android:layout_below="@id/cvGiftContainer"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

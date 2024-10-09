@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/hashTagItemRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/_8sdp"
+        android:paddingHorizontal="@dimen/_4sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivUserProfileImage"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:padding="@dimen/_10sdp"
+            android:layout_alignParentStart="true"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bg_rounded_corner_black"
+            android:src="@drawable/ic_frame_6013x"
+            app:riv_corner_radius="@dimen/_5sdp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivUserProfileImage"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/flFollowActions"
+            android:layout_marginEnd="@dimen/_8sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hashTagNameAppCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/lexend_semi_bold"
+                android:text="@string/profile_name"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_12ssp"
+                android:ellipsize="end"
+                android:maxLines="1"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/flFollowActions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/viewCountAppCompatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/lexend_regular"
+                tools:text="5 Views"
+                android:textColor="@color/color_text_black_transparent_50"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="visible"
+                android:ellipsize="end"
+                android:maxLines="1"/>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

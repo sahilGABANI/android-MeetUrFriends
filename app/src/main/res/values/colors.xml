@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#B473D9</color>
+    <color name="colorPrimaryDark">#8F59CB</color>
+
+    <color name="colorAccent">#DD86E7</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="white_off">#EAEAEA</color>
+    <color name="red_google_button">#DE5C5B</color>
+    <color name="grey">#50000000</color>
+    <color name="light_grey">#20000000</color>
+    <color name="grey_background">#F3F3F5</color>
+    <color name="textColor">#494949</color>
+    <color name="textColor_Green">#4CAF50</color>
+    <color name="textColor_red">#C10E01</color>
+    <color name="gold">#FF9800</color>
+    <color name="yellow">#FBE344</color>
+    <color name="color_video_transparent">#88000000</color>
+    <color name="localBackground">#827b92</color>
+    <color name="remoteBackground">#484258</color>
+    <color name="light_gray">#EFEFEF</color>
+    <color name="color_8A8A8E">#8A8A8E</color>
+    <color name="grey_action_transparent_80">#CC3A3A3D</color>
+    <color name="grey_light_tab_indicator">#B2AEAEB2</color>
+
+    <color name="color_C0C0C0">#C0C0C0</color>
+    <color name="color_A7A7A7">#A7A7A7</color>
+
+
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_red">#FF0000</color>
+
+    <color name="progress_secondary">#C4C4C4</color>
+
+    <color name="color_text_black">#333333</color>
+    <color name="color_tab_purple">#673DBC</color>
+    <color name="color_light_purple_bg_editext">#F7F5FB</color>
+    <color name="color_text_black_transparent_50">#80333333</color>
+    <color name="color_text_black_transparent_10">#1A333333</color>
+    <color name="color_grey_view">#F2F2F2</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="color_light_pink">#D24DA3</color>
+    <color name="white_50_opacity">#80FFFFFF</color>
+    <color name="white_30_opacity">#4DFFFFFF</color>
+    <color name="home_nav_add_view">#ECE2FF</color>
+    <color name="icon_un_Selected">#999999</color>
+
+    <color name="clouded_vision">#D1D1D1</color>
+    <color name="colorHalfTransparent">#80000000</color>
+    <color name="color_BF000000">#BF000000</color>
+
+    <color name="grey_dark">#242426</color>
+    <color name="grey_action">#3A3A3D</color>
+    <color name="like_red">#ED3B6D</color>
+    <color name="sky_blue">#E403A9F4</color>
+    <color name="color_accept_gift_request">#46AE16</color>
+    <color name="color_accept_gift_request_70">#B346AE16</color>
+    <color name="color_reject_gift_request_70">#B3B22827</color>
+    <color name="color_reject_gift_request">#B22827</color>
+    <color name="color_tab_purple_70">#B3673DBC</color>
+    <color name="color_0F8BFE">#0F8BFE</color>
+    <color name="color_F8375B">#F8375B</color>
+    <color name="color_FEDA36">#FEDA36</color>
+    <color name="color_A1A1A1">#A1A1A1</color>
+    <color name="color_CD7F32">#CD7F32</color>
+    <color name="color_DDDDE3">#DDDDE3</color>
+    <color name="color_A6A6B0">#A6A6B0</color>
+    <color name="color_FF141A26">#FF141A26</color>
+    <color name="your_tint_color">#64646D</color>
+    <color name="like_tint_color">#F01B1B</color>
+    <color name="color_EB5757">#EB5757</color>
+    <color name="color_3478F6">#3478F6</color>
+    <color name="color_808089">#808089</color>
+    <color name="color_FFC94D">#FFC94D</color>
+    <color name="color_65656C">#65656C</color>
+
+    <color name="anti_flash_white">#F1F2F6</color>
+    <color name="cultured">#F6F6F6</color>
+    <color name="smoky_black">#0E0E0E</color>
+    <color name="mantis">#65C466</color>
+    <color name="carmine_pink">#EA4E3D</color>
+    <color name="mantis_light">#E2F6E2</color>
+    <color name="carmine_pink_light">#FAEBE9</color>
+    <color name="yellow_pending">#F29339</color>
+    <color name="yellow_pending_light">#FFEBD9</color>
+    <color name="transperent_purple">#80673CBB</color>
+    <color name="terms_color">#4F4F57</color>
+    <color name="transparent_black_80">#CC000000</color>
+    <color name="bottom_sheet_color">#1E1E1E</color>
+    <color name="selected_lens_container_background">#4D16191C</color>
+    <color name="lens_card_background_color">#343434</color>
+    <array name="text_colors">
+        <item>#ffffff</item>
+        <item>#607D8B</item>
+        <item>#F44336</item>
+        <item>#9C27B0</item>
+        <item>#3F51B5</item>
+        <item>#03A9F4</item>
+        <item>#009688</item>
+        <item>#8BC34A</item>
+        <item>#FFEB3B</item>
+        <item>#FF9800</item>
+        <item>#795548</item>
+        <item>#9E9E9E</item>
+        <item>#000000</item>
+    </array>
+
+    <!--  VIDEO TRIMMER  -->
+    <color name="line_color">#FF15FF00</color>
+    <color name="shadow_color">#FF000000</color>
+    <color name="transparent_black">#94333232</color>
+    <color name="color_efc43b">#efc43b</color>
+    <color name="color_ECE5E5">#ECE5E5</color>
+    <color name="color_545460">#545460</color>
+    <color name="color_B3353535">#B3353535</color>
+    <color name="color_B3000000">#B3000000</color>
+    <color name="color_515156">#515156</color>
+    <color name="color_DE3442">#DE3442</color>
+    <color name="color_0FADFF">#0FADFF</color>
+    <color name="color_656D78">#656D78</color>
+    <color name="color_DDDDDD">#DDDDDD</color>
+    <color name="color_505050">#505050</color>
+    <color name="color_E9E6EE">#E9E6EE</color>
+    <color name="color_ffffffff">#ffffffff</color>
+    <color name="color_DADADF">#DADADF</color>
+</resources>

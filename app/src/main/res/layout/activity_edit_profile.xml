@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:cardElevation="@dimen/_3sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:padding="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/backAppCompatImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_back_new"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@id/backAppCompatImageView"
+                android:fontFamily="@font/lexend_semi_bold"
+                android:includeFontPadding="false"
+                android:text="@string/label_edit_profile"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_16ssp" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMore"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_more"
+                android:tint="@color/color_text_black"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/tvUpdateInfo"
+        app:layout_constraintTop_toBottomOf="@id/cvHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_30sdp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_medium"
+                    android:text="@string/label_profile_picture"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_13ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ivEditProfilePic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/label_edit"
+                    android:textColor="@color/color_tab_purple"
+                    android:textSize="@dimen/_12ssp" />
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/ivCoverPic"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cover_height"
+                android:background="@drawable/black_stroke_line"
+                android:clickable="false"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_placer_holder_image_new"
+                android:visibility="gone"
+                app:layout_collapseMode="parallax"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivEditCoverPic"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/ic_edit_pic"
+                android:visibility="gone"
+                app:layout_collapseMode="parallax"
+                app:layout_constraintBottom_toBottomOf="@id/ivCoverPic"
+                app:layout_constraintRight_toRightOf="@id/ivCoverPic" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/ivProfilePic"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_empty_profile_placeholder"
+                app:riv_corner_radius="@dimen/_6sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/color_grey_view" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_medium"
+                    android:text="@string/label_bio"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEditBio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/label_edit"
+                    android:visibility="visible"
+                    android:textColor="@color/color_tab_purple"
+                    android:textSize="@dimen/_12ssp" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:fontFamily="@font/lexend_regular"
+                android:text="@string/label_describe_yourself"
+                android:visibility="gone"
+                android:textColor="@color/color_text_black_transparent_50"
+                android:textSize="@dimen/_12ssp" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etBio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_25sdp"
+                android:background="@drawable/bg_edit_profile_edittext"
+                android:fontFamily="@font/metropolis_regular"
+                android:imeOptions="actionDone"
+                android:textColor="@color/black"
+                android:inputType="textMultiLine"
+                android:paddingTop="1dp"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginTop="@dimen/_5sdp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/metropolis_regular"
+                android:textColor="@color/black"
+                android:background="@drawable/bg_edit_profile_edittext"
+                android:layout_marginHorizontal="@dimen/_25sdp"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:maxLength="250" />
+
+            <ImageView
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_edit_pic"
+                android:visibility="gone"
+                app:layout_collapseMode="parallax"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfilePic"
+                app:layout_constraintRight_toRightOf="@id/ivProfilePic" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_medium"
+                    android:text="@string/label_details"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEditOtherDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/label_edit"
+                    android:visibility="visible"
+                    android:textColor="@color/color_tab_purple"
+                    android:textSize="@dimen/_12ssp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_edit_user" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="@string/label_first_name_is"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edit_profile_edittext"
+                        android:fontFamily="@font/lexend_semi_bold"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/_2sdp"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="@dimen/_10sdp"
+                        android:maxLength="25"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_edit_user" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="@string/label_last_name_is"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_10ssp" />
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edit_profile_edittext"
+                        android:fontFamily="@font/lexend_semi_bold"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/color_text_black"
+                        android:padding="@dimen/_2sdp"
+                        android:textSize="@dimen/_10sdp"
+                        android:maxLength="25"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_edit_user" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="@string/label_user_name_is"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edit_profile_edittext"
+                        android:fontFamily="@font/lexend_semi_bold"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/_2sdp"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="@dimen/_10sdp"
+                        android:maxLength="50"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_edit_user" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="@string/label_email_phone_no"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_10ssp" />
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edit_profile_edittext"
+                        android:fontFamily="@font/lexend_semi_bold"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/_2sdp"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="@dimen/_10sdp"
+                        android:maxLength="50"
+                        android:focusable="false"
+                        android:editable="false"
+                        android:cursorVisible="false"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_edit_user_city" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="@string/label_current_city_is"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edit_profile_edittext"
+                        android:fontFamily="@font/lexend_semi_bold"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/_2sdp"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="@dimen/_10sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_edit_user_education" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="@string/label_education_is"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_10ssp" />
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etEducation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edit_profile_edittext"
+                        android:fontFamily="@font/lexend_semi_bold"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/_2sdp"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="@dimen/_10sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_edit_user_work" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="@string/label_work_is"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_10ssp" />
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etWork"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edit_profile_edittext"
+                        android:fontFamily="@font/lexend_semi_bold"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/_2sdp"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="@dimen/_10sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_edit_user_gender" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvGenderLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/label_gender_is"
+                    android:textColor="@color/color_text_black_transparent_50"
+                    android:textSize="@dimen/_10ssp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:allowClickWhenDisabled="false"
+                    android:padding="@dimen/_2sdp">
+
+                    <RadioButton
+                        android:id="@+id/radioMale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="58dp"
+                        android:layout_marginStart="@dimen/_minus4sdp"
+                        android:fontFamily="@font/lexend_regular"
+                        android:scaleX=".7"
+                        android:scaleY=".7"
+                        android:text="@string/label_male"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_14sdp"
+                        android:buttonTint="@color/color_tab_purple"/>
+
+                    <RadioButton
+                        android:id="@+id/radioFemale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_minus14sdp"
+                        android:fontFamily="@font/lexend_regular"
+                        android:scaleX=".7"
+                        android:scaleY=".7"
+                        android:text="@string/label_female"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_14sdp"
+                        android:buttonTint="@color/color_tab_purple"/>
+
+                    <RadioButton
+                        android:id="@+id/radioOther"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_minus14sdp"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:scaleX=".7"
+                        android:scaleY=".7"
+                        android:text="@string/label_other"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_14sdp"
+                        android:buttonTint="@color/color_tab_purple"/>
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_45sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@color/color_grey_view"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_edit_user_relation" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvRelationshipLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/label_relation_status"
+                    android:textColor="@color/color_text_black_transparent_50"
+                    android:textSize="@dimen/_10sdp" />
+
+                <RadioGroup
+                    android:id="@+id/radioRelationShip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_2sdp">
+
+                    <RadioButton
+                        android:id="@+id/radioSingle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_minus8sdp"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:scaleX=".7"
+                        android:scaleY=".7"
+                        android:text="@string/label_single"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_14sdp"
+                        android:buttonTint="@color/color_tab_purple"/>
+
+                    <RadioButton
+                        android:id="@+id/radioMarried"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_minus16sdp"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:scaleX=".7"
+                        android:scaleY=".7"
+                        android:text="@string/label_married"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_14sdp"
+                        android:buttonTint="@color/color_tab_purple"/>
+
+                    <RadioButton
+                        android:id="@+id/radioUnmarried"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_minus22sdp"
+                        android:scaleX=".7"
+                        android:scaleY=".7"
+                        android:text="@string/label_unmarried"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_14sdp"
+                        android:buttonTint="@color/color_tab_purple"/>
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_45sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@color/color_grey_view"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_edit_user_dob" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/headingDOB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="date of birth"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_10ssp" />
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etDOB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edit_profile_edittext"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:layout_below="@id/headingDOB"
+                        android:fontFamily="@font/lexend_semi_bold"
+                        android:layout_alignParentStart="true"
+                        android:imeOptions="actionNext"
+                        android:drawableEnd="@drawable/ic_calendar_user"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/_2sdp"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="@dimen/_10sdp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_edit_hobbies" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_regular"
+                        android:text="@string/label_hobbies"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_text_black_transparent_50"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etHobbies"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edit_profile_edittext"
+                        android:fontFamily="@font/lexend_semi_bold"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:padding="@dimen/_2sdp"
+                        android:paddingTop="1dp"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="@dimen/_10sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_20sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/label_set_profile_to_private"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_11ssp" />
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchMakePrivate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumb="@drawable/live_stream_thumbs_unchecked"
+                    app:track="@drawable/live_stream_custom_track"
+                    app:useMaterialThemeColors="false"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUpdateInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/button_date_filter_bg"
+        android:backgroundTint="@color/color_tab_purple"
+        android:fontFamily="@font/lexend_medium"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_12sdp"
+        android:text="@string/done"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

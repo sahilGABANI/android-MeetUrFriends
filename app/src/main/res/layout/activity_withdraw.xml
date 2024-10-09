@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragments.monetization.WithdrawActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/header_gradient"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/headerLoginBackButton"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:padding="13dp"
+                android:src="@drawable/ic_white_arrow_back_"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/headerLoginBackButton"
+                android:src="@drawable/ic_meet_friend_logo_white" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarThumbVertical="@color/white"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/label_bank_details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textFieldName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/label_first_name"
+                    android:textSize="@dimen/_13sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="0dp"
+                        android:textSize="@dimen/_13sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textFieldLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/label_last_name"
+                    android:textSize="@dimen/_13sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="0dp"
+                        android:textSize="@dimen/_13sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textFieldBankName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/label_bank_name"
+                    android:textSize="@dimen/_13sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etBankName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="0dp"
+                        android:textSize="@dimen/_13sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textFieldAccountNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/label_account_no"
+                    android:textSize="@dimen/_13sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAccountNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="0dp"
+                        android:textSize="@dimen/_13sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textFieldAccountNoRe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/label_confirm_account_no"
+                    android:textSize="@dimen/_13sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAccountNoRe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="0dp"
+                        android:textSize="@dimen/_13sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textFieldRouting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/label_routing_number"
+                    android:textSize="@dimen/_13sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRouting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="0dp"
+                        android:textSize="@dimen/_13sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textFieldIFSC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/label_address"
+                    android:textSize="@dimen/_13sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="0dp"
+                        android:textSize="@dimen/_13sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/label_state"
+                    android:textSize="@dimen/_13sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="0dp"
+                        android:textSize="@dimen/_13sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/label_city"
+                    android:textSize="@dimen/_13sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="0dp"
+                        android:textSize="@dimen/_13sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textZip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/label_zip_code"
+                    android:textSize="@dimen/_13sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etZip"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="0dp"
+                        android:textSize="@dimen/_13sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textPostal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/label_postal"
+                    android:textSize="@dimen/_13sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPostal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="0dp"
+                        android:textSize="@dimen/_13sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/label_phone_number"
+                    android:textSize="@dimen/_13sdp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingTop="0dp"
+                        android:textSize="@dimen/_13sdp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/passwordLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/passportCardView"
+                        android:layout_width="110dp"
+                        android:layout_height="80dp"
+                        android:elevation="10dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardUseCompatPadding="true">
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/passportImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/passportTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:textSize="@dimen/_13sdp"
+                        android:layout_toEndOf="@id/passportCardView"
+                        android:fontFamily="@font/metropolis_regular"
+                        android:text="@string/label_upload_attachment"
+                        android:textColor="@color/black" />
+
+                </RelativeLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/send"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="@string/label_submit"
+                    android:textColor="@color/white"
+                    android:theme="@style/Theme.MaterialComponents.Light"
+                    app:backgroundTint="@color/colorPrimaryDark"
+                    app:cornerRadius="@dimen/_13sdp"
+                    app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

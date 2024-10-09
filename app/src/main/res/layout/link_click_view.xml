@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_55sdp"
+    android:orientation="vertical"
+    android:backgroundTint="@android:color/transparent"
+    android:layout_marginHorizontal="@dimen/_20sdp">
+
+    <LinearLayout
+        android:id="@+id/llAttachment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_7sdp"
+        android:orientation="vertical" />
+
+</LinearLayout>

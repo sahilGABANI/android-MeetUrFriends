@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.chauthai.swipereveallayout.SwipeRevealLayout
+        android:id="@+id/swipeRevelRight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:dragEdge="left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mode="same_level">
+
+        <FrameLayout
+            android:id="@+id/flUpdateMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="end|top"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_tab_purple"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="@string/title_more"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_text_black"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="@string/label_edit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/red_google_button"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="@string/label_delete"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rlMessageContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:orientation="horizontal"
+                android:padding="@dimen/_2sdp"
+                android:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_regular"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:mentionColor="@color/color_tab_purple"
+                    tools:text="Lorem Ipsum is simply dummy text of"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bg_sender_message"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_30sdp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivSave"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_save_chat_msg"
+                    android:tint="@color/color_text_black_transparent_50"
+                    android:visibility="visible"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignTop="@+id/tvMessage"
+                    android:layout_alignBottom="@+id/tvMessage"/>
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ivUserProfileImage"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dummy_profile_pic"
+                    app:riv_corner_radius="@dimen/_3sdp"
+                    android:layout_below="@id/tvMessage"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_6sdp"/>
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+    </com.chauthai.swipereveallayout.SwipeRevealLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="@dimen/_10sdp"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etSearchTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:background="@drawable/background_search_grey"
+            android:drawableStart="@drawable/search"
+            android:drawablePadding="@dimen/_8sdp"
+            android:fontFamily="@font/lexend_regular"
+            android:hint="@string/label_search_hashtag"
+            android:padding="@dimen/_9sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_33sdp"
+        app:layout_collapseMode="pin"
+        app:tabGravity="fill"
+        app:tabMode="scrollable"
+        android:layout_below="@+id/toolbarRelativeLayout"
+        app:tabIconTint="@color/profile_tab_icon_selector"
+        app:tabIndicatorColor="@color/color_tab_purple"
+        app:tabIndicatorHeight="@dimen/_1sdp"
+        app:tabInlineLabel="true"
+        app:tabSelectedTextColor="@color/tab_profile_selector"
+        app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+        app:tabTextColor="@color/color_text_black_transparent_50"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRelativeLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_country"
+            android:layout="@layout/custom_tab_layout"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/users" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hashtags" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/post" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shorts" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/challenges" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/quantum_ic_search_grey600_24" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabLayout"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

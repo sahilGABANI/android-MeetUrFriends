@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/report"
+        android:icon="@drawable/ic_profile_report_user_for_hashtag_screen"
+        android:title="@string/report"/>
+    <item
+        android:id="@+id/block"
+        android:icon="@drawable/ic_profile_block_user_for_hashtag_screen"
+        android:title="@string/label_block"/>
+</menu>

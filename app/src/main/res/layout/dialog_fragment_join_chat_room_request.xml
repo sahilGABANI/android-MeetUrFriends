@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/bg_dialog_fragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:minWidth="@dimen/_235sdp"
+        android:minHeight="@dimen/_280sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/joinchatAppCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:fontFamily="@font/lexend_regular"
+            android:text="@string/label_join_chat_room_request"
+            android:maxLines="1"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_18ssp"
+            android:paddingHorizontal="@dimen/_8sdp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/subtitleAppCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:alpha="0.5"
+            android:fontFamily="@font/lexend_regular"
+            android:text="@string/label_you_received_new_join_chat_room_request"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_10ssp"
+            android:visibility="gone"/>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivUserProfileImage"
+            android:layout_width="@dimen/_62sdp"
+            android:layout_height="@dimen/_62sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:src="@drawable/dummy_profile_pic"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="@dimen/_10sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/lexend_regular"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="krishna.jeny" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:alpha="0.5"
+                android:fontFamily="@font/lexend_light"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_10ssp"
+                tools:text="2 Aug, 2022  5:00 PM" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRoomName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:alpha="0.5"
+                android:fontFamily="@font/lexend_bold"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/_10ssp"
+                tools:text="2 Aug, 2022  5:00 PM"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_18sdp">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/label_reject"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_12ssp"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="@dimen/_7sdp"
+                    android:gravity="center"/>
+
+                <ProgressBar
+                    android:id="@+id/rejectProgressBar"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_18sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAccept"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/label_accept"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="@dimen/_7sdp"
+                    android:backgroundTint="@color/color_tab_purple"
+                    android:gravity="center" />
+
+                <ProgressBar
+                    android:id="@+id/acceptProgressBar"
+                    android:layout_width="@dimen/_22sdp"
+                    android:layout_height="@dimen/_22sdp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

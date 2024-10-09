@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reelsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:scrollbars="none"
+                tools:listitem="@layout/view_play_shorts"/>
+
+            <LinearLayout
+                android:id="@+id/tvNoShorts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/desc_empty_shorts"
+                    android:textColor="@color/grey_font"
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/lexend_regular"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:gravity="center_horizontal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/grey_font"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginHorizontal="@dimen/_16sdp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/noShortsHashTagLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:layout_marginVertical="@dimen/_50sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_no_shorts"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_no_shorts_available"
+                    android:fontFamily="@font/lexend_medium"
+                    android:textSize="@dimen/_18ssp"
+                    android:textColor="@color/color_text_black" />
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/useThisHashtagAppCompatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_semi_purple"
+        android:drawableStart="@drawable/small_camera"
+        android:fontFamily="@font/lexend_semi_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_3sdp"
+        android:paddingStart="@dimen/_4sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:text="@string/label_use_this_hashtag"
+        android:textColor="@color/color_tab_purple"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"/>
+</RelativeLayout>

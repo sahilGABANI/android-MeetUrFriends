@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/joinRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_navigation_join_room"
+        android:title="@string/label_join_room" />
+
+    <item
+        android:id="@+id/myRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_navigation_my_room"
+        android:title="@string/label_my_room" />
+
+    <item
+        android:id="@+id/createRoom"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_navigation_create_room"
+        android:title="@string/label_create_room" />
+
+    <item
+        android:id="@+id/message"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_navigation_message"
+        android:title="@string/title_message" />
+
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_navigation_profile"
+        android:title="@string/label_profile" />
+</menu>

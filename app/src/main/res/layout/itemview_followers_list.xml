@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_4sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivUserProfileImage"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentStart="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/three"
+            app:riv_corner_radius="@dimen/_4sdp" />
+
+        <LinearLayout
+            android:id="@+id/llUserNameContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_toEndOf="@id/ivUserProfileImage"
+            android:orientation="vertical"
+            android:layout_toStartOf="@id/flFollowActions"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_centerVertical="true">
+
+            <RelativeLayout
+                android:id="@+id/rlUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:fontFamily="@font/lexend_regular"
+                    android:text="@string/profile_name"
+                    android:maxWidth="@dimen/_100sdp"
+                    android:textColor="@color/color_text_black"
+                    android:textSize="@dimen/_12ssp"
+                    android:ellipsize="end"
+                    android:maxLines="1"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivAccountVerified"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_2sdp"
+                    android:layout_toEndOf="@id/tvName"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:src="@drawable/ic_icon_verified"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/lexend_regular"
+                android:text="@string/user_name"
+                android:textColor="@color/color_text_black_transparent_50"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="gone"
+                android:ellipsize="end"
+                android:maxLines="1"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/flFollowActions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvFollowing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_join_container"
+                        android:backgroundTint="@color/color_light_purple_bg_editext"
+                        android:fontFamily="@font/lexend_regular"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:text="@string/following"
+                        android:textColor="@color/color_tab_purple"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="visible"
+                        android:minWidth="@dimen/_80sdp"
+                        android:gravity="center_horizontal"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvFollow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/bg_join_container"
+                        android:backgroundTint="@color/color_tab_purple"
+                        android:fontFamily="@font/lexend_regular"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:text="@string/label_follow"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone"
+                        android:minWidth="@dimen/_80sdp"
+                        android:gravity="center_horizontal"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvFollowBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/bg_join_container"
+                        android:backgroundTint="@color/color_tab_purple"
+                        android:fontFamily="@font/lexend_regular"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:text="@string/follow_back"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone"
+                        android:minWidth="@dimen/_80sdp"
+                        android:gravity="center_horizontal"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvRequested"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/bg_join_container"
+                        android:backgroundTint="@color/color_tab_purple"
+                        android:fontFamily="@font/lexend_regular"
+                        android:paddingVertical="@dimen/_6sdp"
+                        android:text="@string/label_requested"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone"
+                        android:minWidth="@dimen/_80sdp"
+                        android:gravity="center_horizontal"/>
+
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:padding="@dimen/_3sdp"
+                    android:src="@drawable/more_icon"
+                    android:tint="@color/color_text_black_transparent_50"
+                    android:visibility="gone"
+                    android:layout_gravity="center_vertical" />
+
+            </LinearLayout>
+
+
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

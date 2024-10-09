@@ -1,0 +1,65 @@
+
+
+*************************************************************************
+Important issues
+Milestone 1:
+1. Fix login with phone issue
+>> Mobile number login is not working in both Android and iOS. As we checked, twillio is implemented for OTP verification.
+Backend: 6 hours
+
+
+2. Need to change account verification instructions
+>> Both Android and iOS. First give clear instructions to user that they know that first they need to verify email then login. For that, after signup we will open a welcome screen where we will show one message that verify your email id by clicking verification link in your email inbox.
+Android: 2 hours
+iOS: 2 hours
+
+3. Android/ iOS text msg issue ( block msg, icon missing )( add accept , block functionality)
+>> Functionality issue and missing button in android... in android friend suggestion page click on any user to check user profile there should be text msg button/icon which is missing when we sent friends request then it’s appears. 
+Issue: In iOS there is text button/icon when click on it it says user is blocked
+Correct functionality is show button/icon and if user click on button able to send text
+Add feature .. first time send msg receiver also get option accept or block ... also add block option in more so user can block any time
+SOlution:
+Backend API to check user is in friend list or not.
+Backend API to check this user is in contact list or not based on that app side Block/Accept button will show.
+Backend API to block any particular user who is not in friend list.
+Changes in existing block/unblock user and load blocked user.
+Screen change where we need to provide Block/Accept button.
+Backend Effort: 13 hours
+Android: 13 hours
+iOS: 13 hours
+
+4. Agora calling issue.
+>> iOS only. Issue not getting call 1 phone to another phone ( iPhoto to iPhone or iPhone to android)
+Ongraph Comment: This is not reproducible at our end. When we called from iPhone app to Android app, it worked for me. Audio and Video both calling was working. Need to check again with client.
+
+5. Fix photo/video issue public , only me , friends of friends ( add feature video tab on home page )
+Answer.. yes we can upload photos issue is in
+Photo tab on profile page . If i upload image and chose only me option then other user visit my profile he/she can’t see that image in post tab that is correct but that same image user can see in photo tab ( it should not display here too because it is only me )( this functionality is for image/ video)
+Backend: 2 hours
+Android: 2 hours
+iOS : 2 hours
+**********************************************************************
+
+Milestone 2:
+6. Add feature .create tab videos on home page and when user upload video same video should come in video tab so user can watch those videos
+SOlution:
+Screen Design
+New API to bring all the videos
+Integration of all the existing APIs(Like, Comment, Show Video, Video player integration)
+Android: 10 hours
+iOS: 10 hours
+Backend: 3 hours
+
+7. Add feature share with other plate forms with logo
+>> Native sharing feature for both iOS and Android. Same Android estimation will be shared for iOS.
+Android: 4 hours
+iOS: 4 hours
+
+8. Emoji in comments and post description section ( new )
+>> In Both Android and iOS. Same Android estimation will be shared for iOS.
+Android: 6 hours
+iOS: 6 hours
+Backend: 2 hours
+
+Total Development Time: 1 Week
+Total Development Cost: 1300 USD

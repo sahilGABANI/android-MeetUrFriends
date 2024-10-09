@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/_10sdp"
+    style="@style/Platform.MaterialComponents.Light">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/outerCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        app:cardBackgroundColor="@color/mantis"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="0dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:background="@color/white"
+            android:elevation="0dp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="0dp">
+
+            <RelativeLayout
+                android:id="@+id/mainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_14sdp"
+                android:paddingBottom="@dimen/_6sdp">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/lexend_medium"
+                        android:maxLines="1"
+                        android:text="@string/earnings_tasks"
+                        android:textColor="@color/smoky_black"
+                        android:textSize="@dimen/_13ssp"
+                        android:layout_above="@id/progress"
+                        android:layout_alignParentTop="true"
+                        android:gravity="center"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/lexend_regular"
+                        android:maxLines="1"
+                        android:text="@string/earnings_total"
+                        android:textColor="@color/mantis"
+                        android:textSize="@dimen/_11ssp" />
+
+                <RelativeLayout
+                    android:id="@+id/secondContainerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvAmount"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTaskDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/tvAmountInCompleteTask"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/lexend_regular"
+                        android:maxLines="1"
+                        android:text="@string/earnings_tasks_date"
+                        android:textColor="@color/color_808089"
+                        android:textSize="@dimen/_10ssp"
+                        android:visibility="gone"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAmountInCompleteTask"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/lexend_regular"
+                        android:maxLines="1"
+                        android:text="@string/earnings_amount_in_total_task"
+                        android:textColor="@color/color_808089"
+                        android:textSize="@dimen/_13ssp" />
+                </RelativeLayout>
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/secondContainerLayout"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:max="100"
+                    android:visibility="gone"/>
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:trackThickness="5dp"
+                    app:trackCornerRadius="9dp"
+                    android:layout_below="@+id/secondContainerLayout"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:max="100"
+                    app:trackColor="@color/color_E9E6EE"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <TextView
+        android:id="@android:id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/MyTabLayoutTextAppearance"
+        android:text="@string/label_country"
+        android:textColor="@color/profile_tab_icon_selector"
+        android:layout_centerVertical="true"/>
+
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/ccp"
+        android:layout_width="@dimen/_14sdp"
+        android:layout_height="wrap_content"
+        app:ccp_autoDetectCountry="true"
+        app:ccp_textSize="@dimen/_12ssp"
+        app:ccp_contentColor="@color/color_transparent"
+        app:ccpDialog_textColor="@color/color_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:ccp_showFlag="false"
+        app:ccp_showArrow="false"
+        app:ccp_showPhoneCode="false"
+        android:layout_toEndOf="@android:id/text1"
+        android:layout_marginStart="@dimen/_3sdp"/>
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@drawable/ic_new_drop_down"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginStart="6dp"
+        app:tint="@color/profile_tab_icon_selector"
+        android:layout_toEndOf="@android:id/text1"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

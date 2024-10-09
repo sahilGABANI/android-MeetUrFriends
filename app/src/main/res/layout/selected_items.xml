@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_46sdp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/flProfileImage"
+        android:layout_width="@dimen/_46sdp"
+        android:layout_height="@dimen/_42sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/ivUserProfileImage"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_placer_holder_image_new"
+            app:riv_corner_radius="@dimen/_7sdp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/removeAppCompatImageView"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:src="@drawable/ic_close"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="visible"/>
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_marginVertical="@dimen/_2sdp"
+        android:id="@+id/tvUSerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:fontFamily="@font/lexend_regular"
+        android:textColor="@color/black"
+        android:paddingHorizontal="@dimen/_2sdp"
+        android:textSize="@dimen/_8ssp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flProfileImage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

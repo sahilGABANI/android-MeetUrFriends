@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_76sdp"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/storyLinearLayout"
+        android:layout_width="@dimen/_76sdp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/storyItem"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/storyRoundedImageView"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                android:scaleType="centerCrop"
+                app:riv_oval="false"
+                android:src="@drawable/three"
+                app:riv_corner_radius="@dimen/_10sdp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/addStoryLinearLayout"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_70sdp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/addStoryImage"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                android:scaleType="centerCrop"
+                app:riv_oval="false"
+                android:src="@drawable/three"
+                app:riv_corner_radius="@dimen/_10sdp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAdd"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:src="@drawable/ic_create_story_new" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/rlUser"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_18sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/storyLinearLayout">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/ivAccountVerified"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:id="@+id/storyNameAppCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend_medium"
+            android:layout_gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:text="@string/label_add_story"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/ivAccountVerified"
+            android:layout_width="@dimen/_14sdp"
+            android:layout_height="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_gravity="center_vertical|end"
+            android:paddingTop="@dimen/_2sdp"
+            android:src="@drawable/ic_icon_verified"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_sheet"
+    android:orientation="vertical"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/viewUpper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|center_vertical|center"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:src="@drawable/ic_bsv_header_line" />
+    <RelativeLayout
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_3sdp"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/close"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_close" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvShare"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend_bold"
+            android:text="@string/labek_repost"
+            android:textColor="@color/color_text_black"
+            android:textSize="@dimen/_16ssp" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/itemDivider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/half_dp"
+        android:background="@color/color_DDDDE3"
+        android:visibility="visible" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_marginTop="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_3sdp"
+        android:paddingHorizontal="@dimen/_16sdp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ivUserPicture"
+                    android:layout_width="@dimen/_34sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/three"
+                    app:riv_corner_radius="@dimen/_8sdp" />
+
+                <RelativeLayout
+                    android:layout_toStartOf="@id/postPrivacySpinners"
+                    android:id="@+id/rlUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/ivUserPicture">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvUsername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:fontFamily="@font/lexend_regular"
+                        android:textColor="@color/color_text_black"
+                        android:textSize="@dimen/_12ssp"
+                        tools:text="Name" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivAccountVerified"
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_toEndOf="@id/tvUsername"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:src="@drawable/ic_icon_verified"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/postPrivacySpinners"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/bg_edittext"
+                    android:drawableEnd="@drawable/ic_drop_down_icon"
+                    android:popupBackground="@drawable/bg_edittext"
+                    android:drawablePadding="@dimen/_3sdp"
+                    android:drawableStart="@drawable/ic_public"
+                    android:text="@string/label_public"
+                    android:textSize="@dimen/_10ssp"
+                    android:fontFamily="@font/lexend_regular"
+                    android:textColor="@color/color_tab_purple"
+                    android:dropDownWidth="@dimen/_90sdp"
+                    android:dropDownVerticalOffset="4dp"
+                    android:inputType="none"
+                    android:minWidth="@dimen/_60sdp"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_8sdp" />
+
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etStoryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/et_background"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="top"
+                android:hint="@string/hint_say_something_about_this"
+                android:lines="5"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/color_text_black"
+                android:textColorHint="@color/color_text_black_transparent_50"
+                android:textSize="@dimen/_12sdp" />
+
+            <LinearLayout
+                android:id="@+id/llMentionUserListContainer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:background="@drawable/bg_edittext"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMentionUserList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/view_mention_user" />
+
+            </LinearLayout>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvShareButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/bg_edittext"
+                android:backgroundTint="@color/color_tab_purple"
+                android:fontFamily="@font/lexend_regular"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/labek_repost"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</LinearLayout>

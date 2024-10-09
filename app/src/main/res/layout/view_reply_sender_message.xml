@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.chauthai.swipereveallayout.SwipeRevealLayout
+        android:id="@+id/swipeRevelRight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:dragEdge="left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mode="same_level">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_tab_purple"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="@string/title_more"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/color_text_black"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="@string/label_edit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/red_google_button"
+                    android:fontFamily="@font/lexend_regular"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="@string/label_delete"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                android:orientation="vertical"
+                android:layout_gravity="end">
+
+                <RelativeLayout
+                    android:id="@+id/rlReplyMessageContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_sender_message"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_2sdp"
+                    android:visibility="visible"
+                    android:layout_marginStart="@dimen/_6sdp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/rlReplyContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="0dp"
+                        app:cardCornerRadius="@dimen/_6sdp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/carmine_pink"
+                        android:layout_margin="@dimen/_4sdp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:elevation="0dp"
+                            app:cardCornerRadius="@dimen/_6sdp"
+                            app:cardElevation="0dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="@dimen/_8sdp"
+                                android:layout_marginEnd="@dimen/_10sdp">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvOriginalMessageUserName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginStart="@dimen/_4sdp"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/lexend_medium"
+                                    android:maxLines="1"
+                                    android:textColor="@color/carmine_pink"
+                                    android:textSize="@dimen/_12ssp"
+                                    tools:text="Sadaat Raja" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvOriginalMessage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tvOriginalMessageUserName"
+                                    android:layout_marginStart="@dimen/_4sdp"
+                                    android:layout_marginTop="@dimen/_1sdp"
+                                    android:layout_marginEnd="@dimen/_20sdp"
+                                    android:alpha="0.5"
+                                    android:ellipsize="end"
+                                    android:fontFamily="@font/lexend_regular"
+                                    android:maxLines="1"
+                                    android:textColor="@color/color_text_black"
+                                    android:textSize="@dimen/_10ssp"
+                                    tools:text="Reply Message" />
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvReplyMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rlReplyContainer"
+                        android:layout_marginStart="@dimen/_6sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:fontFamily="@font/lexend_regular"
+                        android:includeFontPadding="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        app:mentionColor="@color/color_tab_purple"
+                        tools:text="Lorem Ipsum is"
+                        android:paddingVertical="@dimen/_8sdp"/>
+
+
+                </RelativeLayout>
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ivUserProfileImage"
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dummy_profile_pic"
+                    app:riv_corner_radius="@dimen/_3sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:visibility="gone"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/_10sdp"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </com.chauthai.swipereveallayout.SwipeRevealLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
